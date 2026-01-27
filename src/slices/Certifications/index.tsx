@@ -1,6 +1,8 @@
+'use client'
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
+import { Variants, motion } from "motion/react";
 import { FC } from "react";
 
 /**
@@ -12,19 +14,53 @@ export type CertificationsProps =
 /**
  * Component for "Certifications" Slices.
  */
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 const Certifications: FC<CertificationsProps> = ({ slice }) => {
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex flex-col lg:flex-row items-center flex-wrap justify-center gap-14 lg:gap-25 container py-24">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+        className="mx-auto flex container py-20 max-w-[1200px] flex-col items-center gap-12 lg:flex-row lg:justify-between"
+      >
         {slice.primary.certifications.map((item, index) => (
-          <div key={index}>
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
             {item.image.url && <PrismicNextImage field={item.image} />}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

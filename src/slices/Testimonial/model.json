@@ -42,6 +42,14 @@
                   "label": "Reviewer Name",
                   "placeholder": ""
                 }
+              },
+              "reviewer_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Reviewer Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
               }
             }
           }

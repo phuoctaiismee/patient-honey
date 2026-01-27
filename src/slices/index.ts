@@ -6,6 +6,7 @@ export const components = {
   certifications: dynamic(() => import("./Certifications")),
   dental_hero: dynamic(() => import("./Hero")),
   large_image: dynamic(() => import("./LargeImage")),
+  office_gallery: dynamic(() => import("./OfficeGallery")),
   quality_care_message: dynamic(() => import("./MessageSection")),
   services_grid: dynamic(() => import("./ServicesGrid")),
   testimonial: dynamic(() => import("./Testimonial")),

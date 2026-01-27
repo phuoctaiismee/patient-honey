@@ -1,0 +1,48 @@
+{
+  "id": "office_gallery",
+  "type": "SharedSlice",
+  "name": "OfficeGallery",
+  "description": "A gallery of office images with a title and centered branding element",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation with office gallery",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,heading2"
+          }
+        },
+        "gallery_images": {
+          "type": "Group",
+          "config": {
+            "label": "Gallery Images",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              }
+            }
+          }
+        },
+        "center_logo": {
+          "type": "Image",
+          "config": {
+            "label": "Center Logo"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

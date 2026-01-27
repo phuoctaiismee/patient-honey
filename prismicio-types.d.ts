@@ -370,6 +370,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | OfficeGallerySlice
   | TestimonialSlice
   | QualityCareMessageSlice
   | LargeImageSlice
@@ -647,6 +648,88 @@ export type LargeImageSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *OfficeGallery → Default → Primary → Gallery Images*
+ */
+export interface OfficeGallerySliceDefaultPrimaryGalleryImagesItem {
+  /**
+   * Image field in *OfficeGallery → Default → Primary → Gallery Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: office_gallery.default.primary.gallery_images[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *OfficeGallery → Default → Primary*
+ */
+export interface OfficeGallerySliceDefaultPrimary {
+  /**
+   * Title field in *OfficeGallery → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: office_gallery.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Gallery Images field in *OfficeGallery → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: office_gallery.default.primary.gallery_images[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  gallery_images: prismic.GroupField<
+    Simplify<OfficeGallerySliceDefaultPrimaryGalleryImagesItem>
+  >;
+
+  /**
+   * Center Logo field in *OfficeGallery → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: office_gallery.default.primary.center_logo
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  center_logo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for OfficeGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with office gallery
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type OfficeGallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OfficeGallerySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OfficeGallery*
+ */
+type OfficeGallerySliceVariation = OfficeGallerySliceDefault;
+
+/**
+ * OfficeGallery Shared Slice
+ *
+ * - **API ID**: `office_gallery`
+ * - **Description**: A gallery of office images with a title and centered branding element
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type OfficeGallerySlice = prismic.SharedSlice<
+  "office_gallery",
+  OfficeGallerySliceVariation
+>;
+
+/**
  * Primary content in *MessageSection → Default → Primary*
  */
 export interface QualityCareMessageSliceDefaultPrimary {
@@ -842,6 +925,16 @@ export interface TestimonialSliceDefaultPrimaryTestimonialsItem {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   reviewer_name: prismic.KeyTextField;
+
+  /**
+   * Reviewer Image field in *Testimonial → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.default.primary.testimonials[].reviewer_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  reviewer_image: prismic.ImageField<never>;
 }
 
 /**
@@ -954,6 +1047,11 @@ declare module "@prismicio/client" {
       LargeImageSliceDefaultPrimary,
       LargeImageSliceVariation,
       LargeImageSliceDefault,
+      OfficeGallerySlice,
+      OfficeGallerySliceDefaultPrimaryGalleryImagesItem,
+      OfficeGallerySliceDefaultPrimary,
+      OfficeGallerySliceVariation,
+      OfficeGallerySliceDefault,
       QualityCareMessageSlice,
       QualityCareMessageSliceDefaultPrimary,
       QualityCareMessageSliceVariation,
