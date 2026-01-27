@@ -1,0 +1,70 @@
+{
+  "format": "custom",
+  "id": "header",
+  "label": "Header",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "navigations": {
+        "type": "Group",
+        "config": {
+          "label": "Navigations",
+          "repeat": true,
+          "fields": {
+            "link_item": {
+              "type": "Link",
+              "config": {
+                "label": "Navigation Item",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            },
+            "navigation_sub_items": {
+              "type": "Link",
+              "config": {
+                "label": "Navigation Sub Items",
+                "placeholder": "Add your link item",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": true
+              }
+            }
+          }
+        }
+      },
+      "cta_buttons": {
+        "type": "Group",
+        "config": {
+          "label": "CTA Buttons",
+          "repeat": true,
+          "fields": {
+            "button": {
+              "type": "Link",
+              "config": {
+                "label": "Button",
+                "placeholder": "Add your actions",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

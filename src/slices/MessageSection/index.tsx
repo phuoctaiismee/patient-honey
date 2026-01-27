@@ -1,0 +1,29 @@
+import HighlightSection from "@/components/shared/highlight-content";
+import { Content } from "@prismicio/client";
+import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react";
+
+/**
+ * Props for `QualityCareMessage`.
+ */
+export type QualityCareMessageProps =
+  SliceComponentProps<Content.QualityCareMessageSlice>;
+
+/**
+ * Component for "QualityCareMessage" Slices.
+ */
+const QualityCareMessage: FC<QualityCareMessageProps> = ({ slice }) => {
+  return (
+    <section
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
+      <HighlightSection
+        title={slice.primary.heading}
+        description={slice.primary.description}
+      />
+    </section>
+  );
+};
+
+export default QualityCareMessage;

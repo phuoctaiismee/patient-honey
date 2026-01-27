@@ -1,0 +1,64 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"testimonials": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading5",
+											"content": {
+												"text": "Rubber"
+											}
+										}
+									]
+								}
+							],
+							[
+								"review_content",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Est velit veniam velit qui ullamco nisi ullamco amet ad enim ipsum ad. Laboris in adipisicing ea dolore."
+											}
+										}
+									]
+								}
+							],
+							[
+								"reviewer_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "step",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"view_more_action": {
+				"__TYPE__": "LinkContent",
+				"key": "1e685dad-b419-4054-b467-d27af16d18bd",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "consonant"
+				}
+			}
+		},
+		"items": []
+	}
+]

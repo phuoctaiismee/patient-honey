@@ -1,0 +1,64 @@
+{
+  "id": "testimonial",
+  "type": "SharedSlice",
+  "name": "Testimonial",
+  "description": "Customer testimonial section with image, review text, and call-to-action",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default testimonial variation",
+      "imageUrl": "",
+      "primary": {
+        "testimonials": {
+          "type": "Group",
+          "config": {
+            "label": "Testimonials",
+            "repeat": true,
+            "fields": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "heading5,strong,em"
+                }
+              },
+              "review_content": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Review Content",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,em,strong"
+                }
+              },
+              "reviewer_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Reviewer Name",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "view_more_action": {
+          "type": "Link",
+          "config": {
+            "label": "View More Action",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

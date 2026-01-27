@@ -1,0 +1,39 @@
+{
+  "id": "certifications",
+  "type": "SharedSlice",
+  "name": "Certifications",
+  "description": "Grid layout for certification logos and badges",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation",
+      "imageUrl": "",
+      "primary": {
+        "certifications": {
+          "type": "Group",
+          "config": {
+            "label": "Certifications",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo or Badge Image"
+                }
+              },
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": "Optional caption or description"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
