@@ -1,6 +1,7 @@
-import { FC } from "react";
+import MembershipPlan from "@/components/shared/membership-plan";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
+import { FC } from "react";
 
 /**
  * Props for `MembershipPlans`.
@@ -12,24 +13,18 @@ export type MembershipPlansProps =
  * Component for "MembershipPlans" Slices.
  */
 const MembershipPlans: FC<MembershipPlansProps> = ({ slice }) => {
+  const { heading, howItWorks, plans, promotionalText } = slice.primary;
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText field={slice.primary.heading} />
-      <div>
-        {slice.primary.plans.map((plan, index) => (
-          <div key={index}>
-            <h3>{plan.planName}</h3>
-            <p>{plan.price}</p>
-            <PrismicRichText field={plan.features} />
-          </div>
-        ))}
-      </div>
-      <PrismicRichText field={slice.primary.promotionalText} />
-      <PrismicRichText field={slice.primary.howItWorksHeading} />
-      <PrismicRichText field={slice.primary.termsAndConditions} />
+      <MembershipPlan
+        title={heading}
+        howItWorks={howItWorks}
+        plans={plans}
+        promotionalText={promotionalText}
+      />
     </section>
   );
 };

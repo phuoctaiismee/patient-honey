@@ -1,5 +1,6 @@
 import SiteFooter from "@/components/common/layouts/footer";
 import SiteHeader from "@/components/common/layouts/header";
+import { Toaster } from "@/components/ui/sonner";
 import ReactQueryProvider from "@/providers/react-query-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
@@ -42,6 +43,7 @@ export default function RootLayout({
             <SiteHeader />
             {children}
             <SiteFooter />
+            <Toaster />
           </ThemeProvider>
         </ReactQueryProvider>
       </body>

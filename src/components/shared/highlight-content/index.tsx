@@ -3,6 +3,7 @@
 import GhostTitle from "@/components/shared/ghost-title";
 import { ShineBorder } from "@/components/shared/shine-border";
 import { RichTextField } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { motion } from "motion/react";
 import React from "react";
@@ -10,7 +11,7 @@ import React from "react";
 interface HighlightSectionProps {
   title: RichTextField;
   description: RichTextField;
-  bottomContent?: React.ReactNode;
+  bottomContent?: RichTextField;
   hasDecoration?: boolean;
 }
 
@@ -21,6 +22,7 @@ const HighlightSection = ({
   hasDecoration = true,
 }: HighlightSectionProps) => {
   console.log("🚀 ~ HighlightSection ~ description:", description)
+  console.log("🚀 ~ HighlightSection ~ bottomContent:", bottomContent);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -80,34 +82,61 @@ const HighlightSection = ({
         <GhostTitle title={title} />
       </motion.div>
 
-      <motion.div
-        variants={highlightBoxVariants as never}
-        className="relative container max-w-300 z-10 rounded-2xl bg-[#63636314] px-3 py-5 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
-        // style={{
-        //   border: '1px solid',
-        //   borderImageSource: 'linear-gradient(80.65deg, #000000 -0.1%, #FFFFFF 82.97%, #000000 119.83%)',
-        // }}
-      >
-        <ShineBorder
-          borderWidth={1}
-          shineColor={["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]}
-        />
+      {description && description.length > 0 && (
+        <motion.div
+          variants={highlightBoxVariants as never}
+          className="relative container max-w-300 z-10 rounded-2xl bg-[#63636314] px-3 py-5 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
+          // style={{
+          //   border: '1px solid',
+          //   borderImageSource: 'linear-gradient(80.65deg, #000000 -0.1%, #FFFFFF 82.97%, #000000 119.83%)',
+          // }}
+        >
+          <ShineBorder
+            borderWidth={1}
+            shineColor={["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]}
+          />
+          <PrismicRichText
+            field={description}
+            components={{
+              paragraph: ({ children }) => (
+                <div className="text-lg leading-[170%] font-light tracking-[0%] [&>strong]:font-bold [&>em]:italic lg:text-xl lg:leading-[200%]">
+                  {children}
+                </div>
+              ),
+            }}
+          />
+        </motion.div>
+      )}
+
+      {bottomContent && (
         <PrismicRichText
-          field={description}
+          field={bottomContent}
           components={{
-            paragraph: ({ children }) => (
-              <div className="text-lg leading-[170%] font-light tracking-[0%] [&>strong]:font-bold [&>em]:italic lg:text-xl lg:leading-[200%]">
+            image: ({ node }) => {
+              return (
+                <PrismicNextImage
+                  field={node}
+                  className="h-[480px] w-full object-cover lg:h-[600px]"
+                />
+              );
+            },
+            heading4: ({ children }) => (
+              <h4 className="font-urbanist text-[28px] leading-[100%] font-light [&>strong]:font-bold tracking-[5%] text-white lg:text-[48px]">
                 {children}
-              </div>
+              </h4>
+            ),
+            paragraph: ({ children }) => (
+              <p className="text-base leading-[150%] font-light [&>strong]:font-bold tracking-[0%] text-[#F1F1F1] lg:text-lg">
+                {children}
+              </p>
+            ),
+            listItem: ({ children }) => (
+              <li className="text-base list-disc list-inside leading-[150%] [&>strong]:font-bold font-light tracking-[0%] text-[#F1F1F1] lg:text-lg">
+                {children}
+              </li>
             ),
           }}
         />
-      </motion.div>
-
-      {bottomContent && (
-        <motion.div variants={itemVariants as never}>
-          {bottomContent}
-        </motion.div>
       )}
 
       {/* decoration */}

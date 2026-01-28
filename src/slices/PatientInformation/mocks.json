@@ -46,6 +46,15 @@
 						}
 					}
 				]
+			},
+			"request_link": {
+				"key": "f3757dc3-e366-4286-9f15-c2a568e5aac4",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "occur"
+				}
 			}
 		},
 		"items": []

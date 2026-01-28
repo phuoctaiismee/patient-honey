@@ -65,7 +65,7 @@
             "label": "How It Works",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,heading2,strong,em"
+            "multi": "paragraph,heading2,strong,em"
           }
         }
       },

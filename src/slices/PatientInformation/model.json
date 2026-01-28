@@ -30,6 +30,17 @@
             "multi": "paragraph"
           }
         },
+        "request_link": {
+          "type": "Link",
+          "config": {
+            "label": "Request Link",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
         "request_description": {
           "type": "StructuredText",
           "config": {
