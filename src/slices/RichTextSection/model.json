@@ -21,6 +21,13 @@
             "multi": "heading2,strong"
           }
         },
+        "cover_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Cover Heading",
+            "placeholder": ""
+          }
+        },
         "content": {
           "type": "StructuredText",
           "config": {
@@ -36,11 +43,54 @@
             "label": "Background Color",
             "placeholder": ""
           }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "withMediaEmbed",
+      "name": "With Media Embed",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation with repeating dental implant guide sections",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,strong"
+          }
         },
         "cover_heading": {
           "type": "Text",
           "config": {
             "label": "Cover Heading",
+            "placeholder": ""
+          }
+        },
+        "video_embed": {
+          "type": "Embed",
+          "config": {
+            "label": "Video Embed",
+            "placeholder": ""
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,strong,em,hyperlink,image,list-item,o-list-item"
+          }
+        },
+        "background_color": {
+          "type": "Color",
+          "config": {
+            "label": "Background Color",
             "placeholder": ""
           }
         }
