@@ -1,6 +1,8 @@
 "use client";
 
+import MapComponent from "@/components/shared/map";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/prismicio";
 import { asLink } from "@prismicio/client";
@@ -9,7 +11,9 @@ import { PrismicRichText } from "@prismicio/react";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
+
+const shouldHideFooterHeaderPaths = ["/contact", "/request-appointment"];
 
 const fetchFooter = async () => {
   const client = createClient();
@@ -32,6 +36,13 @@ const SiteFooter = () => {
     navigation_label,
     primary_cta,
     social_links,
+    secondary_cta,
+    office_hours,
+    office_hours_label,
+    office_hours_icon,
+    clinic_name,
+    map_location,
+    top_footer_contacts,
   } = useMemo(() => {
     const parentChilds = data?.data.navigations.map((nav) => nav.link_item);
     const childParent = data?.data.navigations.flatMap(
@@ -49,12 +60,105 @@ const SiteFooter = () => {
         child: childParent ?? [],
       },
       copyright: data?.data.copyright_text ?? null,
+      secondary_cta: data?.data.secondary_cta ?? null,
+      office_hours_icon: data?.data.office_hours_icon ?? null,
+      office_hours_label: data?.data.office_hours_label ?? null,
+      office_hours: data?.data.office_hours ?? null,
+      map_location: data?.data.map_location ?? null,
+      clinic_name: data?.data.clinic_name ?? null,
+      top_footer_contacts: data?.data.top_footer_contacts ?? [],
     };
   }, [data]);
+
+  const shouldHideFooterHeader = useMemo(() => {
+    return shouldHideFooterHeaderPaths.includes(pathname);
+  }, [pathname]);
 
   return (
     <div className="overflow-hidden">
       <footer className="flex flex-col gap-25 container py-20">
+        {!shouldHideFooterHeader && (
+          <>
+            <div className="container mx-auto flex flex-col gap-[60] lg:flex-row">
+              <MapComponent
+                className="h-[366px] lg:h-auto lg:flex-1"
+                center={[
+                  map_location?.longitude || -111.8651523,
+                  map_location?.latitude || 33.7422526,
+                ]}
+                zoom={18}
+              />
+              <div className="flex-1 space-y-8">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+                  <h3 className="text-[28px] leading-[100%] font-medium tracking-[5%] lg:text-[40px]">
+                    {clinic_name}
+                  </h3>
+
+                  <PrismicNextLink
+                    field={secondary_cta}
+                    className="lg:h-12 h-[46px] px-4 py-1 rounded-[24px] bg-primary inline-flex whitespace-nowrap items-center justify-center font-semibold leading-[150%] tracking-[-0.24px]text-center hover:bg-white hover:text-black"
+                  >
+                    {secondary_cta?.text}
+                  </PrismicNextLink>
+                </div>
+                <Separator className="border-2 border-[#4A4754]" />
+                <div className="space-y-6">
+                  {top_footer_contacts.map((item) => (
+                    <div
+                      className="grid grid-cols-1 lg:grid-cols-4"
+                      key={item.label}
+                    >
+                      <div className="flex items-center gap-6">
+                        <PrismicNextImage field={item.icon} />
+                        <span className="text-xl leading-[100%] font-semibold tracking-[5%]">
+                          {item.label}
+                        </span>
+                      </div>
+                      <span className="text-lg leading-[100%] font-light tracking-[0.25%] lg:col-span-3">
+                        {item.value}
+                      </span>
+                    </div>
+                  ))}
+
+                  <div className="flex items-start gap-6">
+                    <PrismicNextImage
+                      field={office_hours_icon}
+                      className="hidden lg:block"
+                    />
+
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-6">
+                        <PrismicNextImage
+                          field={office_hours_icon}
+                          className="lg:hidden"
+                        />
+
+                        <span className="text-xl leading-[100%] font-semibold tracking-[5%]">
+                          {office_hours_label || "Office Hour"}
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-[auto_auto] gap-x-4">
+                        {office_hours?.map((item, index) => (
+                          <Fragment key={index}>
+                            <span className="text-lg leading-[200%] font-light tracking-[0.25%]">
+                              {item.day}:
+                            </span>
+                            <span className="text-lg leading-[200%] font-light tracking-[0.25%]">
+                              {item.is_closed
+                                ? "CLOSED"
+                                : `${item.open_time} – ${item.close_time}`}
+                            </span>
+                          </Fragment>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Separator className="border-2 border-[#4A4754]" />
+          </>
+        )}
         <div className="flex flex-col gap-20">
           <div className="flex flex-col items-center gap-15 lg:flex-row">
             {/* left */}
