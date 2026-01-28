@@ -1,7 +1,7 @@
 import GhostTitle from "@/components/shared/ghost-title";
 import { ShineBorder } from "@/components/shared/shine-border";
 import { RichTextField } from "@prismicio/client";
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants } from "motion/react";
 import VideoItem from "./video-item";
 
 const containerVariants: Variants = {

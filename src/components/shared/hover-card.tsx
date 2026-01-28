@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { ImageField, KeyTextField, LinkField } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import React from "react";
 
 interface HoverCardProps {
