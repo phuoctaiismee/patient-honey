@@ -1,8 +1,7 @@
-import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
-import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { FC } from "react";
 
 /**
  * Props for `DoctorProfile`.
@@ -21,7 +20,7 @@ const DoctorProfile: FC<DoctorProfileProps> = ({ slice }) => {
     >
       <PrismicRichText field={slice.primary.title} />
       <PrismicNextImage field={slice.primary.doctor_image} />
-      <h3>{slice.primary.doctor_name}</h3>
+    
       <PrismicRichText field={slice.primary.description} />
     </section>
   );
