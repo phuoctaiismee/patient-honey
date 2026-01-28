@@ -1,3 +1,4 @@
+import ServicesCardsSection from "@/components/shared/service-cards";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { FC } from "react";
@@ -11,15 +12,12 @@ export type ServiceCardProps = SliceComponentProps<Content.ServiceCardSlice>;
  * Component for "ServiceCard" Slices.
  */
 const ServiceCard: FC<ServiceCardProps> = ({ slice }) => {
-
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div>
-       Card
-      </div>
+      <ServicesCardsSection services={slice.primary.features} />
     </section>
   );
 };

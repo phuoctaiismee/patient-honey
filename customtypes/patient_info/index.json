@@ -1,0 +1,115 @@
+{
+  "format": "page",
+  "id": "patient_info",
+  "label": "Patient Info",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "quality_care_message": {
+              "type": "SharedSlice"
+            },
+            "office_gallery": {
+              "type": "SharedSlice"
+            },
+            "case_showcase": {
+              "type": "SharedSlice"
+            },
+            "dental_hero": {
+              "type": "SharedSlice"
+            },
+            "dental_implant_guide": {
+              "type": "SharedSlice"
+            },
+            "team_section": {
+              "type": "SharedSlice"
+            },
+            "treatment_showcase": {
+              "type": "SharedSlice"
+            },
+            "video_carousel": {
+              "type": "SharedSlice"
+            },
+            "testimonial": {
+              "type": "SharedSlice"
+            },
+            "service_card": {
+              "type": "SharedSlice"
+            },
+            "smile_callout": {
+              "type": "SharedSlice"
+            },
+            "services_grid": {
+              "type": "SharedSlice"
+            },
+            "reviews_grid": {
+              "type": "SharedSlice"
+            },
+            "reviews_cta": {
+              "type": "SharedSlice"
+            },
+            "patient_information": {
+              "type": "SharedSlice"
+            },
+            "patient_stories": {
+              "type": "SharedSlice"
+            },
+            "membership_plans": {
+              "type": "SharedSlice"
+            },
+            "large_image": {
+              "type": "SharedSlice"
+            },
+            "consultation_cta": {
+              "type": "SharedSlice"
+            },
+            "doctor_profile": {
+              "type": "SharedSlice"
+            },
+            "certifications": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

@@ -543,6 +543,92 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
+type HomePageDocumentDataSlicesSlice =
+  | OfficeGallerySlice
+  | QualityCareMessageSlice
+  | CaseShowcaseSlice
+  | DentalImplantGuideSlice
+  | VideoCarouselSlice
+  | TeamSectionSlice
+  | DentalHeroSlice
+  | ServiceCardSlice
+  | TreatmentShowcaseSlice
+  | TestimonialSlice
+  | SmileCalloutSlice
+  | PatientInformationSlice
+  | PatientStoriesSlice
+  | ServicesGridSlice
+  | ReviewsCtaSlice
+  | ReviewsGridSlice
+  | MembershipPlansSlice
+  | LargeImageSlice
+  | DoctorProfileSlice
+  | ConsultationCtaSlice
+  | CertificationsSlice;
+
+/**
+ * Content for Home Page documents
+ */
+interface HomePageDocumentData {
+  /**
+   * Slice Zone field in *Home Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<HomePageDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Home Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Home Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Home Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Home Page document from Prismic
+ *
+ * - **API ID**: `home_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomePageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomePageDocumentData>,
+    "home_page",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | TreatmentShowcaseSlice
   | VideoCarouselSlice
@@ -625,7 +711,185 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
+type PatientInfoDocumentDataSlicesSlice =
+  | QualityCareMessageSlice
+  | OfficeGallerySlice
+  | CaseShowcaseSlice
+  | DentalHeroSlice
+  | DentalImplantGuideSlice
+  | TeamSectionSlice
+  | TreatmentShowcaseSlice
+  | VideoCarouselSlice
+  | TestimonialSlice
+  | ServiceCardSlice
+  | SmileCalloutSlice
+  | ServicesGridSlice
+  | ReviewsGridSlice
+  | ReviewsCtaSlice
+  | PatientInformationSlice
+  | PatientStoriesSlice
+  | MembershipPlansSlice
+  | LargeImageSlice
+  | ConsultationCtaSlice
+  | DoctorProfileSlice
+  | CertificationsSlice;
+
+/**
+ * Content for Patient Info documents
+ */
+interface PatientInfoDocumentData {
+  /**
+   * Slice Zone field in *Patient Info*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_info.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<PatientInfoDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Patient Info*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: patient_info.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Patient Info*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: patient_info.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Patient Info*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_info.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Patient Info document from Prismic
+ *
+ * - **API ID**: `patient_info`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PatientInfoDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PatientInfoDocumentData>,
+    "patient_info",
+    Lang
+  >;
+
+type ServicesDocumentDataSlicesSlice =
+  | OfficeGallerySlice
+  | QualityCareMessageSlice
+  | VideoCarouselSlice
+  | ReviewsGridSlice
+  | CaseShowcaseSlice
+  | TeamSectionSlice
+  | TreatmentShowcaseSlice
+  | DentalHeroSlice
+  | DentalImplantGuideSlice
+  | TestimonialSlice
+  | SmileCalloutSlice
+  | ServicesGridSlice
+  | DoctorProfileSlice
+  | PatientStoriesSlice
+  | ReviewsCtaSlice
+  | MembershipPlansSlice
+  | ServiceCardSlice
+  | PatientInformationSlice
+  | LargeImageSlice
+  | CertificationsSlice
+  | ConsultationCtaSlice;
+
+/**
+ * Content for Services documents
+ */
+interface ServicesDocumentData {
+  /**
+   * Slice Zone field in *Services*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<ServicesDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: services.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: services.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Services document from Prismic
+ *
+ * - **API ID**: `services`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ServicesDocumentData>,
+    "services",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | FooterDocument
+  | HeaderDocument
+  | HomePageDocument
+  | PageDocument
+  | PatientInfoDocument
+  | ServicesDocument;
 
 /**
  * Item in *CaseShowcase → Default → Primary → Cases*
@@ -2641,9 +2905,18 @@ declare module "@prismicio/client" {
       HeaderDocumentData,
       HeaderDocumentDataNavigationsItem,
       HeaderDocumentDataCtaButtonsItem,
+      HomePageDocument,
+      HomePageDocumentData,
+      HomePageDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PatientInfoDocument,
+      PatientInfoDocumentData,
+      PatientInfoDocumentDataSlicesSlice,
+      ServicesDocument,
+      ServicesDocumentData,
+      ServicesDocumentDataSlicesSlice,
       AllDocumentTypes,
       CaseShowcaseSlice,
       CaseShowcaseSliceDefaultPrimaryCasesItem,
