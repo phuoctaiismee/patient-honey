@@ -1354,6 +1354,22 @@ export interface PatientInformationSliceDefaultPrimary {
   request_title: prismic.RichTextField;
 
   /**
+   * Request Link field in *PatientInformation → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_information.default.primary.request_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  request_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
    * Request Description field in *PatientInformation → Default → Primary*
    *
    * - **Field Type**: Rich Text

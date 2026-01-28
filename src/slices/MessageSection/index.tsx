@@ -21,6 +21,9 @@ const QualityCareMessage: FC<QualityCareMessageProps> = ({ slice }) => {
       <HighlightSection
         title={slice.primary.heading}
         description={slice.primary.description}
+        {...(slice.variation === "withMedia" && {
+          bottomContent: slice.primary.media_content,
+        })}
       />
     </section>
   );

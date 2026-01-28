@@ -1,10 +1,13 @@
 import SiteFooter from "@/components/common/layouts/footer";
 import SiteHeader from "@/components/common/layouts/header";
+import { Toaster } from "@/components/ui/sonner";
 import ReactQueryProvider from "@/providers/react-query-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +44,7 @@ export default function RootLayout({
             <SiteHeader />
             {children}
             <SiteFooter />
+            <Toaster />
           </ThemeProvider>
         </ReactQueryProvider>
       </body>
