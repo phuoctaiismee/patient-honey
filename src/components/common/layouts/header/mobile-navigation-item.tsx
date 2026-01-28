@@ -74,10 +74,7 @@ export const MobileNavigationItem = ({
             className={cn(
               "block px-4 py-2.5 text-center text-base leading-[160%] font-normal text-white hover:bg-accent rounded-md",
               {
-                "bg-primary hover:bg-primary": isActiveRoute(
-                  pathname,
-                  sub.href,
-                ),
+                "text-primary underline": isActiveRoute(pathname, sub.href),
               },
             )}
             onClick={onClose}

@@ -29,8 +29,8 @@ export const isActiveRoute = (
   const current = normalizePath(pathname);
   const target = normalizePath(href);
 
-  if (target === "/") return current === "/";
-  return current === target || current.startsWith(`${target}/`);
+  // Exact match only - no parent path matching to avoid false positives
+  return current === target;
 };
 
 /* =====================
