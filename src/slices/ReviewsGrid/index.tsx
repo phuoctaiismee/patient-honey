@@ -27,10 +27,6 @@ const ReviewsGrid: FC<ReviewsGridProps> = ({ slice }) => {
       ? slice.primary.viewMoreLink.url
       : "#";
 
-  console.log({
-    reviews,
-  });
-
   return (
     <section
       data-slice-type={slice.slice_type}
