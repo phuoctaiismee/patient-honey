@@ -370,6 +370,8 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | DoctorProfileSlice
+  | TeamSectionSlice
   | OfficeGallerySlice
   | TestimonialSlice
   | QualityCareMessageSlice
@@ -600,6 +602,81 @@ type DentalHeroSliceVariation = DentalHeroSliceDefault;
 export type DentalHeroSlice = prismic.SharedSlice<
   "dental_hero",
   DentalHeroSliceVariation
+>;
+
+/**
+ * Primary content in *DoctorProfile → Default → Primary*
+ */
+export interface DoctorProfileSliceDefaultPrimary {
+  /**
+   * Title field in *DoctorProfile → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Meet The Doctor
+   * - **API ID Path**: doctor_profile.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Doctor Image field in *DoctorProfile → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: doctor_profile.default.primary.doctor_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  doctor_image: prismic.ImageField<never>;
+
+  /**
+   * Doctor Name field in *DoctorProfile → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: doctor_profile.default.primary.doctor_name
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  doctor_name: prismic.RichTextField;
+
+  /**
+   * Biography field in *DoctorProfile → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: doctor_profile.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for DoctorProfile Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default doctor profile variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DoctorProfileSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DoctorProfileSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *DoctorProfile*
+ */
+type DoctorProfileSliceVariation = DoctorProfileSliceDefault;
+
+/**
+ * DoctorProfile Shared Slice
+ *
+ * - **API ID**: `doctor_profile`
+ * - **Description**: Doctor profile section with image, name, credentials, and biography
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DoctorProfileSlice = prismic.SharedSlice<
+  "doctor_profile",
+  DoctorProfileSliceVariation
 >;
 
 /**
@@ -893,6 +970,98 @@ export type ServicesGridSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *TeamSection → Default → Primary → Team Members*
+ */
+export interface TeamSectionSliceDefaultPrimaryTeamMembersItem {
+  /**
+   * Member Image field in *TeamSection → Default → Primary → Team Members*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_section.default.primary.team_members[].member_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  member_image: prismic.ImageField<never>;
+
+  /**
+   * Member Name field in *TeamSection → Default → Primary → Team Members*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_section.default.primary.team_members[].member_name
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  member_name: prismic.RichTextField;
+
+  /**
+   * Biography field in *TeamSection → Default → Primary → Team Members*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_section.default.primary.team_members[].biography
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  biography: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *TeamSection → Default → Primary*
+ */
+export interface TeamSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *TeamSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Meet The Team
+   * - **API ID Path**: team_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Team Members field in *TeamSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_section.default.primary.team_members[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  team_members: prismic.GroupField<
+    Simplify<TeamSectionSliceDefaultPrimaryTeamMembersItem>
+  >;
+}
+
+/**
+ * Default variation for TeamSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default team section variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TeamSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TeamSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TeamSection*
+ */
+type TeamSectionSliceVariation = TeamSectionSliceDefault;
+
+/**
+ * TeamSection Shared Slice
+ *
+ * - **API ID**: `team_section`
+ * - **Description**: A section displaying team member profiles with photos, bios, and quotes
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TeamSectionSlice = prismic.SharedSlice<
+  "team_section",
+  TeamSectionSliceVariation
+>;
+
+/**
  * Item in *Testimonial → Default → Primary → Testimonials*
  */
 export interface TestimonialSliceDefaultPrimaryTestimonialsItem {
@@ -1043,6 +1212,10 @@ declare module "@prismicio/client" {
       DentalHeroSliceDefaultPrimary,
       DentalHeroSliceVariation,
       DentalHeroSliceDefault,
+      DoctorProfileSlice,
+      DoctorProfileSliceDefaultPrimary,
+      DoctorProfileSliceVariation,
+      DoctorProfileSliceDefault,
       LargeImageSlice,
       LargeImageSliceDefaultPrimary,
       LargeImageSliceVariation,
@@ -1061,6 +1234,11 @@ declare module "@prismicio/client" {
       ServicesGridSliceDefaultPrimary,
       ServicesGridSliceVariation,
       ServicesGridSliceDefault,
+      TeamSectionSlice,
+      TeamSectionSliceDefaultPrimaryTeamMembersItem,
+      TeamSectionSliceDefaultPrimary,
+      TeamSectionSliceVariation,
+      TeamSectionSliceDefault,
       TestimonialSlice,
       TestimonialSliceDefaultPrimaryTestimonialsItem,
       TestimonialSliceDefaultPrimary,

@@ -1,0 +1,64 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Unusual"
+						}
+					}
+				]
+			},
+			"doctor_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+					"width": 3810,
+					"height": 5715
+				},
+				"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117?rect=0%2C476%2C3810%2C4763&w=400&h=500",
+				"width": 400,
+				"height": 500,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 476
+					},
+					"background": "transparent"
+				},
+				"alt": "bare",
+				"credits": null,
+				"__TYPE__": "ImageContent"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit consectetur consectetur pariatur incididunt. Laboris reprehenderit magna commodo ut deserunt nisi est aliqua in amet magna et mollit. Duis mollit deserunt laborum enim laborum pariatur."
+						}
+					}
+				]
+			},
+			"doctor_name": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laborum pariatur reprehenderit commodo qui cupidatat amet excepteur ut dolore eu laborum sint. Pariatur irure commodo proident voluptate ullamco esse id id mollit ipsum enim fugiat. Voluptate amet eiusmod laboris ad."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
