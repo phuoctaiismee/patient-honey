@@ -4,7 +4,7 @@ import GhostTitle from "@/components/shared/ghost-title";
 import { ShineBorder } from "@/components/shared/shine-border";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Content, RichTextField } from "@prismicio/client";
+import { Content, KeyTextField, RichTextField } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { motion } from "motion/react";
@@ -12,6 +12,7 @@ import React from "react";
 
 interface HighlightSectionProps {
   title: RichTextField;
+  coverText: KeyTextField;
   description: RichTextField;
   bottomContent?: RichTextField;
   bottomCtas?: Content.QualityCareMessageSliceWithButtonsPrimaryCtaButtonsItem[];
@@ -20,6 +21,7 @@ interface HighlightSectionProps {
 
 const HighlightSection = ({
   title,
+  coverText,
   description,
   bottomContent,
   bottomCtas,
@@ -82,7 +84,7 @@ const HighlightSection = ({
       }}
     >
       <motion.div variants={itemVariants as never}>
-        <GhostTitle title={title} />
+        <GhostTitle title={title} coverText={coverText} />
       </motion.div>
 
       {description && description.length > 0 && (
@@ -145,7 +147,9 @@ const HighlightSection = ({
               return (
                 <PrismicNextImage
                   field={node}
-                  className="h-[480px] w-full object-cover lg:h-[600px]"
+                  width={node.dimensions.width}
+                  height={node.dimensions.height}
+                  className="object-cove mx-auto"
                 />
               );
             },

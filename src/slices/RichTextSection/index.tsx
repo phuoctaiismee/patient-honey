@@ -14,7 +14,7 @@ export type DentalImplantGuideProps =
  * Component for "DentalImplantGuide" Slices.
  */
 const DentalImplantGuide: FC<DentalImplantGuideProps> = ({ slice }) => {
-  const { background_color, content, title } = slice.primary;
+  const { background_color, content, title, cover_heading } = slice.primary;
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -23,8 +23,21 @@ const DentalImplantGuide: FC<DentalImplantGuideProps> = ({ slice }) => {
         ...(background_color ? { backgroundColor: background_color } : {}),
       }}
     >
-      <div className="container py-12 lg:py-20 space-y-8">
-        {title && title.length > 0 && <GhostTitle title={title} />}
+      <div className="container max-w-[1200px] py-12 lg:py-20 space-y-8">
+        {title && title.length > 0 && (
+          <GhostTitle title={title} coverText={cover_heading} />
+        )}
+
+        {slice.variation === "withMediaEmbed" && (
+          <>
+            <div
+              className="aspect-video w-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:aspect-video [&>iframe]:object-cover [&>iframe]:object-center"
+              dangerouslySetInnerHTML={{
+                __html: slice.primary.video_embed.html || "",
+              }}
+            />
+          </>
+        )}
         <PrismicRichText
           field={content}
           components={{

@@ -1,11 +1,11 @@
 "use client";
-import { asText, RichTextField } from "@prismicio/client";
+import { asText, KeyTextField, RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { motion } from "motion/react";
 
 interface GhostTitleProps {
   title: RichTextField;
-  coverText?: string;
+  coverText?: KeyTextField;
 }
 
 const GhostTitle = ({ title, coverText }: GhostTitleProps) => {

@@ -1312,6 +1312,16 @@ export interface DentalImplantGuideSliceDefaultPrimary {
   title: prismic.RichTextField;
 
   /**
+   * Cover Heading field in *RichTextSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
+
+  /**
    * Content field in *RichTextSection → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1330,16 +1340,6 @@ export interface DentalImplantGuideSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   background_color: prismic.ColorField;
-
-  /**
-   * Cover Heading field in *RichTextSection → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: dental_implant_guide.default.primary.cover_heading
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  cover_heading: prismic.KeyTextField;
 }
 
 /**
@@ -1356,9 +1356,80 @@ export type DentalImplantGuideSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *RichTextSection → With Media Embed → Primary*
+ */
+export interface DentalImplantGuideSliceWithMediaEmbedPrimary {
+  /**
+   * Title field in *RichTextSection → With Media Embed → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.withMediaEmbed.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Cover Heading field in *RichTextSection → With Media Embed → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.withMediaEmbed.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
+
+  /**
+   * Video Embed field in *RichTextSection → With Media Embed → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.withMediaEmbed.primary.video_embed
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video_embed: prismic.EmbedField;
+
+  /**
+   * Content field in *RichTextSection → With Media Embed → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.withMediaEmbed.primary.content
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Background Color field in *RichTextSection → With Media Embed → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.withMediaEmbed.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  background_color: prismic.ColorField;
+}
+
+/**
+ * With Media Embed variation for RichTextSection Slice
+ *
+ * - **API ID**: `withMediaEmbed`
+ * - **Description**: Default variation with repeating dental implant guide sections
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DentalImplantGuideSliceWithMediaEmbed =
+  prismic.SharedSliceVariation<
+    "withMediaEmbed",
+    Simplify<DentalImplantGuideSliceWithMediaEmbedPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *RichTextSection*
  */
-type DentalImplantGuideSliceVariation = DentalImplantGuideSliceDefault;
+type DentalImplantGuideSliceVariation =
+  | DentalImplantGuideSliceDefault
+  | DentalImplantGuideSliceWithMediaEmbed;
 
 /**
  * RichTextSection Shared Slice
@@ -3050,8 +3121,10 @@ declare module "@prismicio/client" {
       DentalHeroSliceDefault,
       DentalImplantGuideSlice,
       DentalImplantGuideSliceDefaultPrimary,
+      DentalImplantGuideSliceWithMediaEmbedPrimary,
       DentalImplantGuideSliceVariation,
       DentalImplantGuideSliceDefault,
+      DentalImplantGuideSliceWithMediaEmbed,
       DoctorProfileSlice,
       DoctorProfileSliceDefaultPrimary,
       DoctorProfileSliceVariation,
