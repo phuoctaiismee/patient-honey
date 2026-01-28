@@ -26,7 +26,11 @@ const PatientStories: FC<PatientStoriesProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PatientStoriesSection title={slice.primary.title} videos={videos} />
+      <PatientStoriesSection
+        title={slice.primary.title}
+        videos={videos}
+        description={slice.primary.description}
+      />
     </section>
   );
 };

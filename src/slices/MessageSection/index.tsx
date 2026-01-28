@@ -24,6 +24,9 @@ const QualityCareMessage: FC<QualityCareMessageProps> = ({ slice }) => {
         {...(slice.variation === "withMedia" && {
           bottomContent: slice.primary.media_content,
         })}
+        {...(slice.variation === "withButtons" && {
+          bottomCtas: slice.primary.cta_buttons,
+        })}
       />
     </section>
   );

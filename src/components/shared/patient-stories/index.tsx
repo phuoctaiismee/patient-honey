@@ -1,6 +1,7 @@
 import GhostTitle from "@/components/shared/ghost-title";
 import { ShineBorder } from "@/components/shared/shine-border";
 import { RichTextField } from "@prismicio/client";
+import { PrismicRichText } from "@prismicio/react";
 import { motion, type Variants } from "motion/react";
 import VideoItem from "./video-item";
 
@@ -56,7 +57,7 @@ type PatientStoriesSectionProps = {
     src?: string;
     alt?: string;
   }[];
-  description?: string;
+  description?: RichTextField;
 };
 
 const PatientStoriesSection: React.FC<PatientStoriesSectionProps> = ({
@@ -80,27 +81,29 @@ const PatientStoriesSection: React.FC<PatientStoriesSectionProps> = ({
           </motion.div>
         ))}
       </motion.div>
-      {description && (
+      {description && description.length > 0 && (
         <motion.div
-          variants={highlightBoxVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="relative z-10 rounded-[12px] bg-[#63636314] px-3 py-5 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
+          variants={highlightBoxVariants as never}
+          className="relative container max-w-300 z-10 rounded-2xl bg-[#63636314] px-3 py-5 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
+          // style={{
+          //   border: '1px solid',
+          //   borderImageSource: 'linear-gradient(80.65deg, #000000 -0.1%, #FFFFFF 82.97%, #000000 119.83%)',
+          // }}
         >
           <ShineBorder
             borderWidth={1}
             shineColor={["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]}
           />
-          {typeof description === "string" ? (
-            <p className="text-lg leading-[170%] font-light tracking-[0%] italic lg:text-xl lg:leading-[200%]">
-              {description}
-            </p>
-          ) : (
-            <div className="text-lg leading-[170%] font-light tracking-[0%] italic lg:text-xl lg:leading-[200%]">
-              {description}
-            </div>
-          )}
+          <PrismicRichText
+            field={description}
+            components={{
+              paragraph: ({ children }) => (
+                <div className="text-lg leading-[170%] font-light tracking-[0%] [&>strong]:font-bold [&>em]:italic lg:text-xl lg:leading-[200%]">
+                  {children}
+                </div>
+              ),
+            }}
+          />
         </motion.div>
       )}
     </div>

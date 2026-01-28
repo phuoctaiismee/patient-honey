@@ -1,23 +1,21 @@
 import { asImageSrc } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
-import { Metadata } from "next";
+import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
-
-export default async function HomePage() {
+export default async function Page() {
   const client = createClient();
-  const page = await client.getByUID("page", "home").catch(() => notFound());
+  const page = await client.getSingle("home_page").catch(() => notFound());
 
   return <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
- 
   const client = createClient();
-  const page = await client.getByUID("page", "home").catch(() => notFound());
+  const page = await client.getSingle("home_page").catch(() => notFound());
 
   return {
     title: page.data.meta_title,
@@ -26,11 +24,4 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [{ url: asImageSrc(page.data.meta_image) ?? "" }],
     },
   };
-}
-
-export async function generateStaticParams() {
-  const client = createClient();
-  const pages = await client.getAllByType("page");
-
-  return pages.map((page) => ({ uid: page.uid }));
 }

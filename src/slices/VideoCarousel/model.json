@@ -1,0 +1,38 @@
+{
+  "id": "video_carousel",
+  "type": "SharedSlice",
+  "name": "VideoCarousel",
+  "description": "A video carousel slice with a featured video and carousel of video thumbnails",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation with featured video and video carousel",
+      "imageUrl": "",
+      "primary": {
+        "featured_video": {
+          "type": "Embed",
+          "config": {
+            "label": "Featured Video"
+          }
+        },
+        "carousel_videos": {
+          "type": "Group",
+          "config": {
+            "label": "Carousel Videos",
+            "fields": {
+              "video": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

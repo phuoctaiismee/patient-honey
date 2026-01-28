@@ -543,7 +543,98 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
+type HomePageDocumentDataSlicesSlice =
+  | OfficeGallerySlice
+  | QualityCareMessageSlice
+  | CaseShowcaseSlice
+  | DentalImplantGuideSlice
+  | VideoCarouselSlice
+  | TeamSectionSlice
+  | DentalHeroSlice
+  | ServiceCardSlice
+  | TreatmentShowcaseSlice
+  | TestimonialSlice
+  | SmileCalloutSlice
+  | PatientInformationSlice
+  | PatientStoriesSlice
+  | ServicesGridSlice
+  | ReviewsCtaSlice
+  | ReviewsGridSlice
+  | MembershipPlansSlice
+  | LargeImageSlice
+  | DoctorProfileSlice
+  | ConsultationCtaSlice
+  | CertificationsSlice;
+
+/**
+ * Content for Home Page documents
+ */
+interface HomePageDocumentData {
+  /**
+   * Slice Zone field in *Home Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<HomePageDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Home Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Home Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Home Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Home Page document from Prismic
+ *
+ * - **API ID**: `home_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomePageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomePageDocumentData>,
+    "home_page",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
+  | TreatmentShowcaseSlice
+  | VideoCarouselSlice
+  | SmileCalloutSlice
+  | ServiceCardSlice
+  | DentalImplantGuideSlice
   | ReviewsGridSlice
   | ReviewsCtaSlice
   | PatientStoriesSlice
@@ -620,7 +711,185 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
+type PatientInfoDocumentDataSlicesSlice =
+  | QualityCareMessageSlice
+  | OfficeGallerySlice
+  | CaseShowcaseSlice
+  | DentalHeroSlice
+  | DentalImplantGuideSlice
+  | TeamSectionSlice
+  | TreatmentShowcaseSlice
+  | VideoCarouselSlice
+  | TestimonialSlice
+  | ServiceCardSlice
+  | SmileCalloutSlice
+  | ServicesGridSlice
+  | ReviewsGridSlice
+  | ReviewsCtaSlice
+  | PatientInformationSlice
+  | PatientStoriesSlice
+  | MembershipPlansSlice
+  | LargeImageSlice
+  | ConsultationCtaSlice
+  | DoctorProfileSlice
+  | CertificationsSlice;
+
+/**
+ * Content for Patient Info documents
+ */
+interface PatientInfoDocumentData {
+  /**
+   * Slice Zone field in *Patient Info*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_info.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<PatientInfoDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Patient Info*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: patient_info.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Patient Info*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: patient_info.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Patient Info*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_info.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Patient Info document from Prismic
+ *
+ * - **API ID**: `patient_info`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PatientInfoDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PatientInfoDocumentData>,
+    "patient_info",
+    Lang
+  >;
+
+type ServicesDocumentDataSlicesSlice =
+  | OfficeGallerySlice
+  | QualityCareMessageSlice
+  | VideoCarouselSlice
+  | ReviewsGridSlice
+  | CaseShowcaseSlice
+  | TeamSectionSlice
+  | TreatmentShowcaseSlice
+  | DentalHeroSlice
+  | DentalImplantGuideSlice
+  | TestimonialSlice
+  | SmileCalloutSlice
+  | ServicesGridSlice
+  | DoctorProfileSlice
+  | PatientStoriesSlice
+  | ReviewsCtaSlice
+  | MembershipPlansSlice
+  | ServiceCardSlice
+  | PatientInformationSlice
+  | LargeImageSlice
+  | CertificationsSlice
+  | ConsultationCtaSlice;
+
+/**
+ * Content for Services documents
+ */
+interface ServicesDocumentData {
+  /**
+   * Slice Zone field in *Services*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<ServicesDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: services.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: services.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Services document from Prismic
+ *
+ * - **API ID**: `services`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ServicesDocumentData>,
+    "services",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | FooterDocument
+  | HeaderDocument
+  | HomePageDocument
+  | PageDocument
+  | PatientInfoDocument
+  | ServicesDocument;
 
 /**
  * Item in *CaseShowcase → Default → Primary → Cases*
@@ -880,7 +1149,9 @@ export interface ConsultationCtaSliceDefaultPrimary {
    * - **API ID Path**: consultation_cta.default.primary.form_type
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  form_type: prismic.SelectField<"consultation" | "appointment">;
+  form_type: prismic.SelectField<
+    "consultation" | "appointment" | "get_in_touch"
+  >;
 }
 
 /**
@@ -983,6 +1254,17 @@ export interface DentalHeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/boolean
    */
   with_overlay: prismic.BooleanField;
+
+  /**
+   * Reverse Tagline field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: dental_hero.default.primary.reverse_tagline
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  reverse_tagline: prismic.BooleanField;
 }
 
 /**
@@ -1013,6 +1295,71 @@ type DentalHeroSliceVariation = DentalHeroSliceDefault;
 export type DentalHeroSlice = prismic.SharedSlice<
   "dental_hero",
   DentalHeroSliceVariation
+>;
+
+/**
+ * Primary content in *RichTextSection → Default → Primary*
+ */
+export interface DentalImplantGuideSliceDefaultPrimary {
+  /**
+   * Title field in *RichTextSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Content field in *RichTextSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Background Color field in *RichTextSection → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/fields/color
+   */
+  background_color: prismic.ColorField;
+}
+
+/**
+ * Default variation for RichTextSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with repeating dental implant guide sections
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DentalImplantGuideSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DentalImplantGuideSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RichTextSection*
+ */
+type DentalImplantGuideSliceVariation = DentalImplantGuideSliceDefault;
+
+/**
+ * RichTextSection Shared Slice
+ *
+ * - **API ID**: `dental_implant_guide`
+ * - **Description**: A guide section showcasing dental implant information with repeating sections containing title, description, and image
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type DentalImplantGuideSlice = prismic.SharedSlice<
+  "dental_implant_guide",
+  DentalImplantGuideSliceVariation
 >;
 
 /**
@@ -1470,6 +1817,16 @@ export interface PatientStoriesSliceDefaultPrimary {
   testimonials: prismic.GroupField<
     Simplify<PatientStoriesSliceDefaultPrimaryTestimonialsItem>
   >;
+
+  /**
+   * Description field in *PatientStories → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_stories.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
 }
 
 /**
@@ -1501,6 +1858,21 @@ export type PatientStoriesSlice = prismic.SharedSlice<
   "patient_stories",
   PatientStoriesSliceVariation
 >;
+
+/**
+ * Item in *MessageSection → With Buttons → Primary → CTA Buttons*
+ */
+export interface QualityCareMessageSliceWithButtonsPrimaryCtaButtonsItem {
+  /**
+   * Action field in *MessageSection → With Buttons → Primary → CTA Buttons*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quality_care_message.withButtons.primary.cta_buttons[].action
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  action: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
 
 /**
  * Primary content in *MessageSection → Default → Primary*
@@ -1589,11 +1961,62 @@ export type QualityCareMessageSliceWithMedia = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *MessageSection → With Buttons → Primary*
+ */
+export interface QualityCareMessageSliceWithButtonsPrimary {
+  /**
+   * Heading field in *MessageSection → With Buttons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter heading
+   * - **API ID Path**: quality_care_message.withButtons.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *MessageSection → With Buttons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter description
+   * - **API ID Path**: quality_care_message.withButtons.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * CTA Buttons field in *MessageSection → With Buttons → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quality_care_message.withButtons.primary.cta_buttons[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  cta_buttons: prismic.GroupField<
+    Simplify<QualityCareMessageSliceWithButtonsPrimaryCtaButtonsItem>
+  >;
+}
+
+/**
+ * With Buttons variation for MessageSection Slice
+ *
+ * - **API ID**: `withButtons`
+ * - **Description**: Default variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type QualityCareMessageSliceWithButtons = prismic.SharedSliceVariation<
+  "withButtons",
+  Simplify<QualityCareMessageSliceWithButtonsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *MessageSection*
  */
 type QualityCareMessageSliceVariation =
   | QualityCareMessageSliceDefault
-  | QualityCareMessageSliceWithMedia;
+  | QualityCareMessageSliceWithMedia
+  | QualityCareMessageSliceWithButtons;
 
 /**
  * MessageSection Shared Slice
@@ -1838,6 +2261,88 @@ export type ReviewsGridSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ServiceCard → Default → Primary → Features*
+ */
+export interface ServiceCardSliceDefaultPrimaryFeaturesItem {
+  /**
+   * Feature Name field in *ServiceCard → Default → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: e.g., Dental Implants
+   * - **API ID Path**: service_card.default.primary.features[].feature_name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  feature_name: prismic.KeyTextField;
+
+  /**
+   * Feature Description field in *ServiceCard → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_card.default.primary.features[].feature_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  feature_description: prismic.RichTextField;
+
+  /**
+   * Feature Image field in *ServiceCard → Default → Primary → Features*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_card.default.primary.features[].feature_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  feature_image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ServiceCard → Default → Primary*
+ */
+export interface ServiceCardSliceDefaultPrimary {
+  /**
+   * Features field in *ServiceCard → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_card.default.primary.features[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  features: prismic.GroupField<
+    Simplify<ServiceCardSliceDefaultPrimaryFeaturesItem>
+  >;
+}
+
+/**
+ * Default variation for ServiceCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default service card variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceCardSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceCardSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServiceCard*
+ */
+type ServiceCardSliceVariation = ServiceCardSliceDefault;
+
+/**
+ * ServiceCard Shared Slice
+ *
+ * - **API ID**: `service_card`
+ * - **Description**: A service card component displaying a dental service specialty with title, description, features, and image
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceCardSlice = prismic.SharedSlice<
+  "service_card",
+  ServiceCardSliceVariation
+>;
+
+/**
  * Item in *ServicesGrid → Default → Primary → Services*
  */
 export interface ServicesGridSliceDefaultPrimaryServicesItem {
@@ -1943,6 +2448,82 @@ type ServicesGridSliceVariation = ServicesGridSliceDefault;
 export type ServicesGridSlice = prismic.SharedSlice<
   "services_grid",
   ServicesGridSliceVariation
+>;
+
+/**
+ * Primary content in *SmileCallout → Default → Primary*
+ */
+export interface SmileCalloutSliceDefaultPrimary {
+  /**
+   * Heading field in *SmileCallout → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter heading
+   * - **API ID Path**: smile_callout.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Featured Image field in *SmileCallout → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: smile_callout.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Main Description field in *SmileCallout → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter description
+   * - **API ID Path**: smile_callout.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Padding Top field in *SmileCallout → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: smile_callout.default.primary.padding_top
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  padding_top: prismic.BooleanField;
+}
+
+/**
+ * Default variation for SmileCallout Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SmileCalloutSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SmileCalloutSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SmileCallout*
+ */
+type SmileCalloutSliceVariation = SmileCalloutSliceDefault;
+
+/**
+ * SmileCallout Shared Slice
+ *
+ * - **API ID**: `smile_callout`
+ * - **Description**: Dental consultation callout section with image and description
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SmileCalloutSlice = prismic.SharedSlice<
+  "smile_callout",
+  SmileCalloutSliceVariation
 >;
 
 /**
@@ -2145,6 +2726,153 @@ export type TestimonialSlice = prismic.SharedSlice<
   TestimonialSliceVariation
 >;
 
+/**
+ * Primary content in *TreatmentShowcase → Default → Primary*
+ */
+export interface TreatmentShowcaseSliceDefaultPrimary {
+  /**
+   * Featured Image field in *TreatmentShowcase → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: treatment_showcase.default.primary.featured_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *TreatmentShowcase → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: treatment_showcase.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *TreatmentShowcase → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: treatment_showcase.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Video Embed field in *TreatmentShowcase → Default → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: treatment_showcase.default.primary.video_embed
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video_embed: prismic.EmbedField;
+}
+
+/**
+ * Default variation for TreatmentShowcase Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default treatment showcase variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TreatmentShowcaseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TreatmentShowcaseSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TreatmentShowcase*
+ */
+type TreatmentShowcaseSliceVariation = TreatmentShowcaseSliceDefault;
+
+/**
+ * TreatmentShowcase Shared Slice
+ *
+ * - **API ID**: `treatment_showcase`
+ * - **Description**: A treatment showcase section featuring an image, title, description, and embedded video section
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type TreatmentShowcaseSlice = prismic.SharedSlice<
+  "treatment_showcase",
+  TreatmentShowcaseSliceVariation
+>;
+
+/**
+ * Item in *VideoCarousel → Default → Primary → Carousel Videos*
+ */
+export interface VideoCarouselSliceDefaultPrimaryCarouselVideosItem {
+  /**
+   * Video field in *VideoCarousel → Default → Primary → Carousel Videos*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_carousel.default.primary.carousel_videos[].video
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video: prismic.EmbedField;
+}
+
+/**
+ * Primary content in *VideoCarousel → Default → Primary*
+ */
+export interface VideoCarouselSliceDefaultPrimary {
+  /**
+   * Featured Video field in *VideoCarousel → Default → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_carousel.default.primary.featured_video
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  featured_video: prismic.EmbedField;
+
+  /**
+   * Carousel Videos field in *VideoCarousel → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_carousel.default.primary.carousel_videos[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  carousel_videos: prismic.GroupField<
+    Simplify<VideoCarouselSliceDefaultPrimaryCarouselVideosItem>
+  >;
+}
+
+/**
+ * Default variation for VideoCarousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with featured video and video carousel
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type VideoCarouselSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoCarouselSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoCarousel*
+ */
+type VideoCarouselSliceVariation = VideoCarouselSliceDefault;
+
+/**
+ * VideoCarousel Shared Slice
+ *
+ * - **API ID**: `video_carousel`
+ * - **Description**: A video carousel slice with a featured video and carousel of video thumbnails
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type VideoCarouselSlice = prismic.SharedSlice<
+  "video_carousel",
+  VideoCarouselSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -2177,9 +2905,18 @@ declare module "@prismicio/client" {
       HeaderDocumentData,
       HeaderDocumentDataNavigationsItem,
       HeaderDocumentDataCtaButtonsItem,
+      HomePageDocument,
+      HomePageDocumentData,
+      HomePageDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PatientInfoDocument,
+      PatientInfoDocumentData,
+      PatientInfoDocumentDataSlicesSlice,
+      ServicesDocument,
+      ServicesDocumentData,
+      ServicesDocumentDataSlicesSlice,
       AllDocumentTypes,
       CaseShowcaseSlice,
       CaseShowcaseSliceDefaultPrimaryCasesItem,
@@ -2201,6 +2938,10 @@ declare module "@prismicio/client" {
       DentalHeroSliceDefaultPrimary,
       DentalHeroSliceVariation,
       DentalHeroSliceDefault,
+      DentalImplantGuideSlice,
+      DentalImplantGuideSliceDefaultPrimary,
+      DentalImplantGuideSliceVariation,
+      DentalImplantGuideSliceDefault,
       DoctorProfileSlice,
       DoctorProfileSliceDefaultPrimary,
       DoctorProfileSliceVariation,
@@ -2231,9 +2972,12 @@ declare module "@prismicio/client" {
       QualityCareMessageSlice,
       QualityCareMessageSliceDefaultPrimary,
       QualityCareMessageSliceWithMediaPrimary,
+      QualityCareMessageSliceWithButtonsPrimaryCtaButtonsItem,
+      QualityCareMessageSliceWithButtonsPrimary,
       QualityCareMessageSliceVariation,
       QualityCareMessageSliceDefault,
       QualityCareMessageSliceWithMedia,
+      QualityCareMessageSliceWithButtons,
       ReviewsCtaSlice,
       ReviewsCtaSliceDefaultPrimaryReviewsItem,
       ReviewsCtaSliceDefaultPrimary,
@@ -2244,11 +2988,20 @@ declare module "@prismicio/client" {
       ReviewsGridSliceDefaultPrimary,
       ReviewsGridSliceVariation,
       ReviewsGridSliceDefault,
+      ServiceCardSlice,
+      ServiceCardSliceDefaultPrimaryFeaturesItem,
+      ServiceCardSliceDefaultPrimary,
+      ServiceCardSliceVariation,
+      ServiceCardSliceDefault,
       ServicesGridSlice,
       ServicesGridSliceDefaultPrimaryServicesItem,
       ServicesGridSliceDefaultPrimary,
       ServicesGridSliceVariation,
       ServicesGridSliceDefault,
+      SmileCalloutSlice,
+      SmileCalloutSliceDefaultPrimary,
+      SmileCalloutSliceVariation,
+      SmileCalloutSliceDefault,
       TeamSectionSlice,
       TeamSectionSliceDefaultPrimaryTeamMembersItem,
       TeamSectionSliceDefaultPrimary,
@@ -2259,6 +3012,15 @@ declare module "@prismicio/client" {
       TestimonialSliceDefaultPrimary,
       TestimonialSliceVariation,
       TestimonialSliceDefault,
+      TreatmentShowcaseSlice,
+      TreatmentShowcaseSliceDefaultPrimary,
+      TreatmentShowcaseSliceVariation,
+      TreatmentShowcaseSliceDefault,
+      VideoCarouselSlice,
+      VideoCarouselSliceDefaultPrimaryCarouselVideosItem,
+      VideoCarouselSliceDefaultPrimary,
+      VideoCarouselSliceVariation,
+      VideoCarouselSliceDefault,
     };
   }
 }

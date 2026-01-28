@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "Page",
+  "id": "patient_info",
+  "label": "Patient Info",
   "repeatable": true,
   "status": true,
   "json": {
@@ -17,19 +17,40 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "quality_care_message": {
+              "type": "SharedSlice"
+            },
+            "office_gallery": {
+              "type": "SharedSlice"
+            },
+            "case_showcase": {
+              "type": "SharedSlice"
+            },
+            "dental_hero": {
+              "type": "SharedSlice"
+            },
+            "dental_implant_guide": {
+              "type": "SharedSlice"
+            },
+            "team_section": {
+              "type": "SharedSlice"
+            },
             "treatment_showcase": {
               "type": "SharedSlice"
             },
             "video_carousel": {
               "type": "SharedSlice"
             },
-            "smile_callout": {
+            "testimonial": {
               "type": "SharedSlice"
             },
             "service_card": {
               "type": "SharedSlice"
             },
-            "dental_implant_guide": {
+            "smile_callout": {
+              "type": "SharedSlice"
+            },
+            "services_grid": {
               "type": "SharedSlice"
             },
             "reviews_grid": {
@@ -38,46 +59,25 @@
             "reviews_cta": {
               "type": "SharedSlice"
             },
-            "patient_stories": {
+            "patient_information": {
               "type": "SharedSlice"
             },
-            "patient_information": {
+            "patient_stories": {
               "type": "SharedSlice"
             },
             "membership_plans": {
               "type": "SharedSlice"
             },
-            "consultation_cta": {
+            "large_image": {
               "type": "SharedSlice"
             },
-            "case_showcase": {
+            "consultation_cta": {
               "type": "SharedSlice"
             },
             "doctor_profile": {
               "type": "SharedSlice"
             },
-            "team_section": {
-              "type": "SharedSlice"
-            },
-            "office_gallery": {
-              "type": "SharedSlice"
-            },
-            "testimonial": {
-              "type": "SharedSlice"
-            },
-            "quality_care_message": {
-              "type": "SharedSlice"
-            },
-            "large_image": {
-              "type": "SharedSlice"
-            },
-            "services_grid": {
-              "type": "SharedSlice"
-            },
             "certifications": {
-              "type": "SharedSlice"
-            },
-            "dental_hero": {
               "type": "SharedSlice"
             }
           }

@@ -1,83 +1,77 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "Page",
-  "repeatable": true,
+  "id": "home_page",
+  "label": "Home Page",
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "type": "UID",
-        "config": {
-          "label": "UID"
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "treatment_showcase": {
-              "type": "SharedSlice"
-            },
-            "video_carousel": {
-              "type": "SharedSlice"
-            },
-            "smile_callout": {
-              "type": "SharedSlice"
-            },
-            "service_card": {
-              "type": "SharedSlice"
-            },
-            "dental_implant_guide": {
-              "type": "SharedSlice"
-            },
-            "reviews_grid": {
-              "type": "SharedSlice"
-            },
-            "reviews_cta": {
-              "type": "SharedSlice"
-            },
-            "patient_stories": {
-              "type": "SharedSlice"
-            },
-            "patient_information": {
-              "type": "SharedSlice"
-            },
-            "membership_plans": {
-              "type": "SharedSlice"
-            },
-            "consultation_cta": {
-              "type": "SharedSlice"
-            },
-            "case_showcase": {
-              "type": "SharedSlice"
-            },
-            "doctor_profile": {
-              "type": "SharedSlice"
-            },
-            "team_section": {
-              "type": "SharedSlice"
-            },
             "office_gallery": {
-              "type": "SharedSlice"
-            },
-            "testimonial": {
               "type": "SharedSlice"
             },
             "quality_care_message": {
               "type": "SharedSlice"
             },
-            "large_image": {
+            "case_showcase": {
+              "type": "SharedSlice"
+            },
+            "dental_implant_guide": {
+              "type": "SharedSlice"
+            },
+            "video_carousel": {
+              "type": "SharedSlice"
+            },
+            "team_section": {
+              "type": "SharedSlice"
+            },
+            "dental_hero": {
+              "type": "SharedSlice"
+            },
+            "service_card": {
+              "type": "SharedSlice"
+            },
+            "treatment_showcase": {
+              "type": "SharedSlice"
+            },
+            "testimonial": {
+              "type": "SharedSlice"
+            },
+            "smile_callout": {
+              "type": "SharedSlice"
+            },
+            "patient_information": {
+              "type": "SharedSlice"
+            },
+            "patient_stories": {
               "type": "SharedSlice"
             },
             "services_grid": {
               "type": "SharedSlice"
             },
-            "certifications": {
+            "reviews_cta": {
               "type": "SharedSlice"
             },
-            "dental_hero": {
+            "reviews_grid": {
+              "type": "SharedSlice"
+            },
+            "membership_plans": {
+              "type": "SharedSlice"
+            },
+            "large_image": {
+              "type": "SharedSlice"
+            },
+            "doctor_profile": {
+              "type": "SharedSlice"
+            },
+            "consultation_cta": {
+              "type": "SharedSlice"
+            },
+            "certifications": {
               "type": "SharedSlice"
             }
           }

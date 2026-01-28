@@ -19,6 +19,7 @@ interface HeroSectionProps {
   description?: RichTextField;
   ctaButtons?: LinkField;
   hasFadeOverlayLeft?: boolean;
+  reverseHeading?: boolean;
   backgroundSize?: string;
   backgroundPosition?: string;
   className?: string;
@@ -32,6 +33,7 @@ const HeroSection = ({
   subTitle,
   description,
   hasFadeOverlayLeft = false,
+  reverseHeading = false,
   ctaButtons,
   className,
   titleClassName,
@@ -106,7 +108,7 @@ const HeroSection = ({
         className="contents"
       >
         {/* subtitle */}
-        {subTitle && (
+        {subTitle && !reverseHeading && (
           <motion.h4
             variants={itemVariants as never}
             className={cn(
@@ -137,6 +139,20 @@ const HeroSection = ({
             }}
           />
         )}
+
+         {/* subtitle */}
+        {subTitle && reverseHeading && (
+          <motion.h4
+            variants={itemVariants as never}
+            className={cn(
+              "relative z-10 font-urbanist text-2xl leading-[100%] font-normal tracking-[5%] lg:text-[40px] text-shadow-2xs",
+              subTitleClassName,
+            )}
+          >
+            {subTitle}
+          </motion.h4>
+        )}
+
 
         {/* description */}
         {description && (
