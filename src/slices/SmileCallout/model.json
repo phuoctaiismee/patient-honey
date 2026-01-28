@@ -21,6 +21,13 @@
             "single": "heading2,strong"
           }
         },
+        "cover_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Cover Heading",
+            "placeholder": ""
+          }
+        },
         "image": {
           "type": "Image",
           "config": {

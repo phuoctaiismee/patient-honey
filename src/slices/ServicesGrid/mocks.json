@@ -78,6 +78,11 @@
 					"url": "https://prismic.io",
 					"text": "hold"
 				}
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "system",
+				"type": "Text"
 			}
 		},
 		"items": []

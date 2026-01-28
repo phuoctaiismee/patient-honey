@@ -24,6 +24,11 @@
 						}
 					}
 				]
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "thrown",
+				"type": "Text"
 			}
 		},
 		"items": []
@@ -64,6 +69,11 @@
 						}
 					}
 				]
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "lack",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -108,8 +118,8 @@
 							[
 								"action",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "d8b64174-a2bf-4bd5-adfe-7002d3f3650e",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "https://prismic.io",
@@ -120,6 +130,11 @@
 						]
 					}
 				]
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "game",
+				"type": "Text"
 			}
 		},
 		"items": [

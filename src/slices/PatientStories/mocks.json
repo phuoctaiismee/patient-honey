@@ -87,6 +87,11 @@
 						}
 					}
 				]
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "chair",
+				"type": "Text"
 			}
 		},
 		"items": []

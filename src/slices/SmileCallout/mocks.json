@@ -50,6 +50,11 @@
 			"padding_top": {
 				"__TYPE__": "BooleanContent",
 				"value": true
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "swim",
+				"type": "Text"
 			}
 		},
 		"items": []

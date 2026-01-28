@@ -75,6 +75,11 @@
 						}
 					}
 				]
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "replace",
+				"type": "Text"
 			}
 		},
 		"items": []

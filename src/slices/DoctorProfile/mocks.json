@@ -57,6 +57,11 @@
 						}
 					}
 				]
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "answer",
+				"type": "Text"
 			}
 		},
 		"items": []

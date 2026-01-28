@@ -21,6 +21,13 @@
             "single": "heading2,strong"
           }
         },
+        "cover_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Cover Heading",
+            "placeholder": ""
+          }
+        },
         "description": {
           "type": "StructuredText",
           "config": {
@@ -48,6 +55,13 @@
             "placeholder": "Enter heading",
             "allowTargetBlank": true,
             "single": "heading2,strong"
+          }
+        },
+        "cover_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Cover Heading",
+            "placeholder": ""
           }
         },
         "description": {
@@ -115,6 +129,13 @@
                 }
               }
             }
+          }
+        },
+        "cover_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Cover Heading",
+            "placeholder": ""
           }
         }
       },
