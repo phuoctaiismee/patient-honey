@@ -1,6 +1,6 @@
+import TeamSection from "@/components/shared/team-section";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { FC } from "react";
 
 /**
@@ -13,15 +13,24 @@ export type DoctorProfileProps =
  * Component for "DoctorProfile" Slices.
  */
 const DoctorProfile: FC<DoctorProfileProps> = ({ slice }) => {
+  const { description, doctor_image, doctor_name, title } = slice.primary;
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText field={slice.primary.title} />
-      <PrismicNextImage field={slice.primary.doctor_image} />
-    
-      <PrismicRichText field={slice.primary.description} />
+      <TeamSection
+        className="bg-background"
+        title={title}
+        members={[
+          {
+            id: 1,
+            description,
+            name: doctor_name,
+            photo: doctor_image,
+          },
+        ]}
+      />
     </section>
   );
 };
