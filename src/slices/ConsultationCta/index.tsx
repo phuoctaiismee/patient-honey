@@ -44,7 +44,7 @@ const ConsultationCta: FC<ConsultationCtaProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      {form_type === "consultation" && (
+      {(form_type === "consultation" || form_type === "get_in_touch") && (
         <ConsultationForm
           heading={heading}
           contacts={contacts as never}
