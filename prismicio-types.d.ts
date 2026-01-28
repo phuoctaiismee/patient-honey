@@ -1330,6 +1330,16 @@ export interface DentalImplantGuideSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/color
    */
   background_color: prismic.ColorField;
+
+  /**
+   * Cover Heading field in *RichTextSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dental_implant_guide.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
 }
 
 /**
@@ -1375,6 +1385,16 @@ export interface DoctorProfileSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   title: prismic.RichTextField;
+
+  /**
+   * Cover Heading field in *DoctorProfile → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: doctor_profile.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
 
   /**
    * Doctor Image field in *DoctorProfile → Default → Primary*
@@ -1530,6 +1550,16 @@ export interface MembershipPlansSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Cover Heading field in *MembershipPlans → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membership_plans.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
 
   /**
    * Membership Plans field in *MembershipPlans → Default → Primary*
@@ -1691,6 +1721,16 @@ export interface PatientInformationSliceDefaultPrimary {
   title: prismic.RichTextField;
 
   /**
+   * Cover Heading field in *PatientInformation → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_information.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
+
+  /**
    * Request Title field in *PatientInformation → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1807,6 +1847,16 @@ export interface PatientStoriesSliceDefaultPrimary {
   title: prismic.RichTextField;
 
   /**
+   * Cover Heading field in *PatientStories → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_stories.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
+
+  /**
    * Testimonials field in *PatientStories → Default → Primary*
    *
    * - **Field Type**: Group
@@ -1889,6 +1939,16 @@ export interface QualityCareMessageSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
+   * Cover Heading field in *MessageSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quality_care_message.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
+
+  /**
    * Description field in *MessageSection → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1925,6 +1985,16 @@ export interface QualityCareMessageSliceWithMediaPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Cover Heading field in *MessageSection → With Media → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quality_care_message.withMedia.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
 
   /**
    * Description field in *MessageSection → With Media → Primary*
@@ -1995,6 +2065,16 @@ export interface QualityCareMessageSliceWithButtonsPrimary {
   cta_buttons: prismic.GroupField<
     Simplify<QualityCareMessageSliceWithButtonsPrimaryCtaButtonsItem>
   >;
+
+  /**
+   * Cover Heading field in *MessageSection → With Buttons → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quality_care_message.withButtons.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
 }
 
 /**
@@ -2392,6 +2472,16 @@ export interface ServicesGridSliceDefaultPrimary {
   heading: prismic.RichTextField;
 
   /**
+   * Cover Heading field in *ServicesGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_grid.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
+
+  /**
    * Services field in *ServicesGrid → Default → Primary*
    *
    * - **Field Type**: Group
@@ -2463,6 +2553,16 @@ export interface SmileCalloutSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Cover Heading field in *SmileCallout → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: smile_callout.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
 
   /**
    * Featured Image field in *SmileCallout → Default → Primary*
@@ -2574,6 +2674,16 @@ export interface TeamSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Cover Heading field in *TeamSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_section.default.primary.cover_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  cover_heading: prismic.KeyTextField;
 
   /**
    * Team Members field in *TeamSection → Default → Primary*

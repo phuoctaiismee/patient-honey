@@ -76,6 +76,11 @@
 						]
 					}
 				]
+			},
+			"cover_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "smallest",
+				"type": "Text"
 			}
 		},
 		"items": []

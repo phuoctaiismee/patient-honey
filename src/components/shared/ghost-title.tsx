@@ -5,9 +5,10 @@ import { motion } from "motion/react";
 
 interface GhostTitleProps {
   title: RichTextField;
+  coverText?: string;
 }
 
-const GhostTitle = ({ title }: GhostTitleProps) => {
+const GhostTitle = ({ title, coverText }: GhostTitleProps) => {
   const titleBlur = asText(title);
   return (
     <div className="relative z-10 flex h-[96px] w-full items-center justify-center overflow-hidden lg:h-[115px]">
@@ -18,7 +19,7 @@ const GhostTitle = ({ title }: GhostTitleProps) => {
         viewport={{ once: true }} // <-- Chỉ chạy 1 lần
         className="absolute top-1/2 left-1/2 line-clamp-2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[40px] leading-[100%] font-extrabold tracking-[5%] uppercase opacity-5 lg:line-clamp-1 lg:text-[96px] lg:whitespace-nowrap"
       >
-        {titleBlur}
+        {coverText ?? titleBlur}
       </motion.span>
 
       <PrismicRichText

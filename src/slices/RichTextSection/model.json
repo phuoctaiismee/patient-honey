@@ -36,6 +36,13 @@
             "label": "Background Color",
             "placeholder": ""
           }
+        },
+        "cover_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Cover Heading",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
