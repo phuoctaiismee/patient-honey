@@ -27,7 +27,7 @@ const ReviewItem = ({
           transition: { duration: 0.5 },
         },
       }}
-      className="space-y-6 rounded-[2px] bg-[#303030] px-12 py-6"
+      className="space-y-6 rounded-[2px] bg-[#303030] px-3 lg:px-12 py-6"
     >
       <div className="flex items-center gap-4">
         <Avatar className="size-16.5 rounded-full">

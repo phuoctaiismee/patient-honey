@@ -24,7 +24,7 @@ const ReviewGridSection: React.FC<ReviewGridProps> = ({
   const reviewsLength = useMemo(() => reviews.length, [reviews]);
   return (
     <div className="space-y-8 bg-[#161616] px-4 py-12 lg:px-30 lg:py-25">
-      <div className="container mx-auto flex flex-col gap-8 lg:flex-row">
+      <div className="lg:container lg:mx-auto flex flex-col gap-8 lg:flex-row">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -38,7 +38,7 @@ const ReviewGridSection: React.FC<ReviewGridProps> = ({
               },
             },
           }}
-          className="flex flex-1 flex-col gap-8"
+          className="flex flex-1 flex-col gap-7 lg:gap-8"
         >
           {reviews
             .slice(0, Math.ceil(reviewsLength / 2))

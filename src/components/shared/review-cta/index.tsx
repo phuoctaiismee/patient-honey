@@ -19,21 +19,14 @@ const ReviewCTASection: React.FC<ReviewCTASectionProps> = ({
   platforms,
 }) => {
   return (
-    <div
-      className="flex relative min-h-[620px] space-y-12 bg-[#161616] bg-cover bg-no-repeat px-4 py-12 lg:items-center lg:justify-center lg:px-30 lg:py-25"
-      style={
-        {
-          // background: `url(${bg_reviews_statistics.src}) no-repeat top center / cover`,
-        }
-      }
-    >
+    <div className="flex relative min-h-[620px] space-y-12 bg-[#161616] bg-cover bg-no-repeat px-4 py-12 lg:items-center lg:justify-center lg:px-30 lg:py-25">
       <Image
         src={bgImage || ""}
         alt="bg_reviews_statistics"
         fill
         className="absolute object-cover inset-0 z-0"
       />
-      <div className="relative container h-[312px] w-full bg-[#63636314] px-20 pt-20 shadow-[inset_0px_0px_48px_#FFFFFF40] backdrop-blur-[10px]">
+      <div className="relative container h-[312px] w-full bg-[#63636314] px-8 pt-20 shadow-[inset_0px_0px_48px_#FFFFFF40] backdrop-blur-[10px] lg:px-20">
         <div className="space-y-1">
           <div className="text-center font-urbanist text-xl leading-[100%] font-light tracking-[5%] lg:text-[40px]">
             {subheading}
@@ -42,7 +35,7 @@ const ReviewCTASection: React.FC<ReviewCTASectionProps> = ({
             {heading}
           </div>
         </div>
-        <div className="absolute bottom-0 left-1/2 flex w-full max-w-[300px] -translate-x-1/2 translate-y-[80%] flex-col items-center gap-8 lg:max-w-[860px] lg:translate-y-1/2 lg:flex-row">
+        <div className="absolute bottom-0 left-1/2 flex w-full max-w-[300px] -translate-x-1/2 translate-y-[70%] flex-col items-center gap-8 lg:max-w-[860px] lg:translate-y-1/2 lg:flex-row">
           {platforms?.map((platform, index) => (
             <div
               key={index}
