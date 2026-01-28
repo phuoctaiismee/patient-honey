@@ -1,0 +1,34 @@
+{
+  "id": "case_showcase",
+  "type": "SharedSlice",
+  "name": "CaseShowcase",
+  "description": "A grid showcase of dental cases displaying before and after treatment results",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation with cases grid",
+      "imageUrl": "",
+      "primary": {
+        "cases": {
+          "type": "Group",
+          "config": {
+            "label": "Cases",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "label": "Image"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

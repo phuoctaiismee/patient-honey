@@ -474,6 +474,13 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ReviewsGridSlice
+  | ReviewsCtaSlice
+  | PatientStoriesSlice
+  | PatientInformationSlice
+  | MembershipPlansSlice
+  | ConsultationCtaSlice
+  | CaseShowcaseSlice
   | DoctorProfileSlice
   | TeamSectionSlice
   | OfficeGallerySlice
@@ -544,6 +551,66 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
+
+/**
+ * Item in *CaseShowcase → Default → Primary → Cases*
+ */
+export interface CaseShowcaseSliceDefaultPrimaryCasesItem {
+  /**
+   * Image field in *CaseShowcase → Default → Primary → Cases*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_showcase.default.primary.cases[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *CaseShowcase → Default → Primary*
+ */
+export interface CaseShowcaseSliceDefaultPrimary {
+  /**
+   * Cases field in *CaseShowcase → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_showcase.default.primary.cases[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  cases: prismic.GroupField<Simplify<CaseShowcaseSliceDefaultPrimaryCasesItem>>;
+}
+
+/**
+ * Default variation for CaseShowcase Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation with cases grid
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CaseShowcaseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CaseShowcaseSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CaseShowcase*
+ */
+type CaseShowcaseSliceVariation = CaseShowcaseSliceDefault;
+
+/**
+ * CaseShowcase Shared Slice
+ *
+ * - **API ID**: `case_showcase`
+ * - **Description**: A grid showcase of dental cases displaying before and after treatment results
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CaseShowcaseSlice = prismic.SharedSlice<
+  "case_showcase",
+  CaseShowcaseSliceVariation
+>;
 
 /**
  * Item in *Certifications → Default → Primary → Certifications*
@@ -618,6 +685,165 @@ export type CertificationsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ConsultationCTA → Default → Primary → Contacts*
+ */
+export interface ConsultationCtaSliceDefaultPrimaryContactsItem {
+  /**
+   * Label field in *ConsultationCTA → Default → Primary → Contacts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_cta.default.primary.contacts[].label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Value field in *ConsultationCTA → Default → Primary → Contacts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_cta.default.primary.contacts[].value
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  value: prismic.KeyTextField;
+}
+
+/**
+ * Item in *ConsultationCTA → Default → Primary → Office Hours*
+ */
+export interface ConsultationCtaSliceDefaultPrimaryOfficeHoursItem {
+  /**
+   * Day field in *ConsultationCTA → Default → Primary → Office Hours*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Monday
+   * - **API ID Path**: consultation_cta.default.primary.office_hours[].day
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  day: prismic.KeyTextField;
+
+  /**
+   * Hours field in *ConsultationCTA → Default → Primary → Office Hours*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 9:00 AM - 5:00 PM
+   * - **API ID Path**: consultation_cta.default.primary.office_hours[].hours
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  hours: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ConsultationCTA → Default → Primary*
+ */
+export interface ConsultationCtaSliceDefaultPrimary {
+  /**
+   * Heading field in *ConsultationCTA → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Schedule Your Consultation Today
+   * - **API ID Path**: consultation_cta.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Office Name field in *ConsultationCTA → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Advanced Dentistry & Implant Center
+   * - **API ID Path**: consultation_cta.default.primary.office_name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  office_name: prismic.KeyTextField;
+
+  /**
+   * Office Location field in *ConsultationCTA → Default → Primary*
+   *
+   * - **Field Type**: GeoPoint
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_cta.default.primary.office_location
+   * - **Documentation**: https://prismic.io/docs/fields/geopoint
+   */
+  office_location: prismic.GeoPointField;
+
+  /**
+   * Contacts field in *ConsultationCTA → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_cta.default.primary.contacts[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  contacts: prismic.GroupField<
+    Simplify<ConsultationCtaSliceDefaultPrimaryContactsItem>
+  >;
+
+  /**
+   * Office Hours field in *ConsultationCTA → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_cta.default.primary.office_hours[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  office_hours: prismic.GroupField<
+    Simplify<ConsultationCtaSliceDefaultPrimaryOfficeHoursItem>
+  >;
+
+  /**
+   * Button Text field in *ConsultationCTA → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_cta.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Form Type field in *ConsultationCTA → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_cta.default.primary.form_type
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  form_type: prismic.SelectField<"consultation" | "appointment">;
+}
+
+/**
+ * Default variation for ConsultationCTA Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ConsultationCtaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ConsultationCtaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ConsultationCTA*
+ */
+type ConsultationCtaSliceVariation = ConsultationCtaSliceDefault;
+
+/**
+ * ConsultationCTA Shared Slice
+ *
+ * - **API ID**: `consultation_cta`
+ * - **Description**: A consultation scheduling section with contact form and office information
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ConsultationCtaSlice = prismic.SharedSlice<
+  "consultation_cta",
+  ConsultationCtaSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface DentalHeroSliceDefaultPrimary {
@@ -676,6 +902,17 @@ export interface DentalHeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   backgroundImage: prismic.ImageField<never>;
+
+  /**
+   * With Overlay field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: dental_hero.default.primary.with_overlay
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  with_overlay: prismic.BooleanField;
 }
 
 /**
@@ -829,6 +1066,118 @@ export type LargeImageSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *MembershipPlans → Default → Primary → Membership Plans*
+ */
+export interface MembershipPlansSliceDefaultPrimaryPlansItem {
+  /**
+   * Plan Name field in *MembershipPlans → Default → Primary → Membership Plans*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membership_plans.default.primary.plans[].planName
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  planName: prismic.KeyTextField;
+
+  /**
+   * Price field in *MembershipPlans → Default → Primary → Membership Plans*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membership_plans.default.primary.plans[].price
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  price: prismic.KeyTextField;
+
+  /**
+   * Features List field in *MembershipPlans → Default → Primary → Membership Plans*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membership_plans.default.primary.plans[].features
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  features: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *MembershipPlans → Default → Primary*
+ */
+export interface MembershipPlansSliceDefaultPrimary {
+  /**
+   * Main Heading field in *MembershipPlans → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membership_plans.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Membership Plans field in *MembershipPlans → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membership_plans.default.primary.plans[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  plans: prismic.GroupField<
+    Simplify<MembershipPlansSliceDefaultPrimaryPlansItem>
+  >;
+
+  /**
+   * Promotional Text field in *MembershipPlans → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membership_plans.default.primary.promotionalText
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  promotionalText: prismic.RichTextField;
+
+  /**
+   * How It Works field in *MembershipPlans → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membership_plans.default.primary.howItWorks
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  howItWorks: prismic.RichTextField;
+}
+
+/**
+ * Default variation for MembershipPlans Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation displaying membership plans with terms
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type MembershipPlansSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MembershipPlansSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MembershipPlans*
+ */
+type MembershipPlansSliceVariation = MembershipPlansSliceDefault;
+
+/**
+ * MembershipPlans Shared Slice
+ *
+ * - **API ID**: `membership_plans`
+ * - **Description**: A membership plans section displaying pricing tiers with features and membership terms information
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type MembershipPlansSlice = prismic.SharedSlice<
+  "membership_plans",
+  MembershipPlansSliceVariation
+>;
+
+/**
  * Item in *OfficeGallery → Default → Primary → Gallery Images*
  */
 export interface OfficeGallerySliceDefaultPrimaryGalleryImagesItem {
@@ -911,6 +1260,163 @@ export type OfficeGallerySlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PatientInformation → Default → Primary*
+ */
+export interface PatientInformationSliceDefaultPrimary {
+  /**
+   * Title field in *PatientInformation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Patient Information
+   * - **API ID Path**: patient_information.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Request Title field in *PatientInformation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_information.default.primary.request_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  request_title: prismic.RichTextField;
+
+  /**
+   * Request Description field in *PatientInformation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_information.default.primary.request_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  request_description: prismic.RichTextField;
+
+  /**
+   * Content Info field in *PatientInformation → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_information.default.primary.content_info
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  content_info: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PatientInformation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PatientInformationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PatientInformationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PatientInformation*
+ */
+type PatientInformationSliceVariation = PatientInformationSliceDefault;
+
+/**
+ * PatientInformation Shared Slice
+ *
+ * - **API ID**: `patient_information`
+ * - **Description**: Patient information section with appointment request details and guidelines
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PatientInformationSlice = prismic.SharedSlice<
+  "patient_information",
+  PatientInformationSliceVariation
+>;
+
+/**
+ * Item in *PatientStories → Default → Primary → Testimonials*
+ */
+export interface PatientStoriesSliceDefaultPrimaryTestimonialsItem {
+  /**
+   * Video Thumbnail field in *PatientStories → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_stories.default.primary.testimonials[].video_thumbnail
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  video_thumbnail: prismic.ImageField<never>;
+
+  /**
+   * Video Link field in *PatientStories → Default → Primary → Testimonials*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_stories.default.primary.testimonials[].video_link
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video_link: prismic.EmbedField;
+}
+
+/**
+ * Primary content in *PatientStories → Default → Primary*
+ */
+export interface PatientStoriesSliceDefaultPrimary {
+  /**
+   * Title field in *PatientStories → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Section title
+   * - **API ID Path**: patient_stories.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Testimonials field in *PatientStories → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: patient_stories.default.primary.testimonials[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  testimonials: prismic.GroupField<
+    Simplify<PatientStoriesSliceDefaultPrimaryTestimonialsItem>
+  >;
+}
+
+/**
+ * Default variation for PatientStories Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default patient stories variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PatientStoriesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PatientStoriesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PatientStories*
+ */
+type PatientStoriesSliceVariation = PatientStoriesSliceDefault;
+
+/**
+ * PatientStories Shared Slice
+ *
+ * - **API ID**: `patient_stories`
+ * - **Description**: A section displaying patient testimonial videos with a section title
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type PatientStoriesSlice = prismic.SharedSlice<
+  "patient_stories",
+  PatientStoriesSliceVariation
+>;
+
+/**
  * Primary content in *MessageSection → Default → Primary*
  */
 export interface QualityCareMessageSliceDefaultPrimary {
@@ -949,9 +1455,59 @@ export type QualityCareMessageSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *MessageSection → With Media → Primary*
+ */
+export interface QualityCareMessageSliceWithMediaPrimary {
+  /**
+   * Heading field in *MessageSection → With Media → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter heading
+   * - **API ID Path**: quality_care_message.withMedia.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *MessageSection → With Media → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter description
+   * - **API ID Path**: quality_care_message.withMedia.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Media Content field in *MessageSection → With Media → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quality_care_message.withMedia.primary.media_content
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  media_content: prismic.RichTextField;
+}
+
+/**
+ * With Media variation for MessageSection Slice
+ *
+ * - **API ID**: `withMedia`
+ * - **Description**: Default variation
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type QualityCareMessageSliceWithMedia = prismic.SharedSliceVariation<
+  "withMedia",
+  Simplify<QualityCareMessageSliceWithMediaPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *MessageSection*
  */
-type QualityCareMessageSliceVariation = QualityCareMessageSliceDefault;
+type QualityCareMessageSliceVariation =
+  | QualityCareMessageSliceDefault
+  | QualityCareMessageSliceWithMedia;
 
 /**
  * MessageSection Shared Slice
@@ -963,6 +1519,236 @@ type QualityCareMessageSliceVariation = QualityCareMessageSliceDefault;
 export type QualityCareMessageSlice = prismic.SharedSlice<
   "quality_care_message",
   QualityCareMessageSliceVariation
+>;
+
+/**
+ * Item in *ReviewsCTA → Default → Primary → Reviews*
+ */
+export interface ReviewsCtaSliceDefaultPrimaryReviewsItem {
+  /**
+   * Platform Icon field in *ReviewsCTA → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_cta.default.primary.reviews[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Review Count field in *ReviewsCTA → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 551+
+   * - **API ID Path**: reviews_cta.default.primary.reviews[].count
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  count: prismic.KeyTextField;
+
+  /**
+   * Review Description field in *ReviewsCTA → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 5.0-stars Google Reviews
+   * - **API ID Path**: reviews_cta.default.primary.reviews[].description
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ReviewsCTA → Default → Primary*
+ */
+export interface ReviewsCtaSliceDefaultPrimary {
+  /**
+   * Subheading field in *ReviewsCTA → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Had a Great Experience?
+   * - **API ID Path**: reviews_cta.default.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subheading: prismic.KeyTextField;
+
+  /**
+   * Heading field in *ReviewsCTA → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: We'd Love to Hear From You!
+   * - **API ID Path**: reviews_cta.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Background Image field in *ReviewsCTA → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_cta.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Reviews field in *ReviewsCTA → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_cta.default.primary.reviews[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  reviews: prismic.GroupField<
+    Simplify<ReviewsCtaSliceDefaultPrimaryReviewsItem>
+  >;
+}
+
+/**
+ * Default variation for ReviewsCTA Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation of ReviewsCTA slice
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ReviewsCtaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ReviewsCtaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ReviewsCTA*
+ */
+type ReviewsCtaSliceVariation = ReviewsCtaSliceDefault;
+
+/**
+ * ReviewsCTA Shared Slice
+ *
+ * - **API ID**: `reviews_cta`
+ * - **Description**: A section showcasing reviews from multiple platforms with counts and descriptions
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ReviewsCtaSlice = prismic.SharedSlice<
+  "reviews_cta",
+  ReviewsCtaSliceVariation
+>;
+
+/**
+ * Item in *ReviewsGrid → Default → Primary → Reviews*
+ */
+export interface ReviewsGridSliceDefaultPrimaryReviewsItem {
+  /**
+   * Author Avatar field in *ReviewsGrid → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_grid.default.primary.reviews[].avatar
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  avatar: prismic.ImageField<never>;
+
+  /**
+   * Author Name field in *ReviewsGrid → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_grid.default.primary.reviews[].authorName
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  authorName: prismic.KeyTextField;
+
+  /**
+   * Review Date field in *ReviewsGrid → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_grid.default.primary.reviews[].review_date
+   * - **Documentation**: https://prismic.io/docs/fields/date
+   */
+  review_date: prismic.DateField;
+
+  /**
+   * Star Rating field in *ReviewsGrid → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_grid.default.primary.reviews[].rating
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  rating: prismic.NumberField;
+
+  /**
+   * Review Text field in *ReviewsGrid → Default → Primary → Reviews*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_grid.default.primary.reviews[].reviewText
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  reviewText: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ReviewsGrid → Default → Primary*
+ */
+export interface ReviewsGridSliceDefaultPrimary {
+  /**
+   * Reviews field in *ReviewsGrid → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_grid.default.primary.reviews[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  reviews: prismic.GroupField<
+    Simplify<ReviewsGridSliceDefaultPrimaryReviewsItem>
+  >;
+
+  /**
+   * View More Button field in *ReviewsGrid → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews_grid.default.primary.viewMoreLink
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  viewMoreLink: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Default variation for ReviewsGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default variation of ReviewsGrid
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ReviewsGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ReviewsGridSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ReviewsGrid*
+ */
+type ReviewsGridSliceVariation = ReviewsGridSliceDefault;
+
+/**
+ * ReviewsGrid Shared Slice
+ *
+ * - **API ID**: `reviews_grid`
+ * - **Description**: A grid of review/testimonial cards displaying customer reviews with avatars, ratings, and testimonial text
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ReviewsGridSlice = prismic.SharedSlice<
+  "reviews_grid",
+  ReviewsGridSliceVariation
 >;
 
 /**
@@ -1308,11 +2094,22 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CaseShowcaseSlice,
+      CaseShowcaseSliceDefaultPrimaryCasesItem,
+      CaseShowcaseSliceDefaultPrimary,
+      CaseShowcaseSliceVariation,
+      CaseShowcaseSliceDefault,
       CertificationsSlice,
       CertificationsSliceDefaultPrimaryCertificationsItem,
       CertificationsSliceDefaultPrimary,
       CertificationsSliceVariation,
       CertificationsSliceDefault,
+      ConsultationCtaSlice,
+      ConsultationCtaSliceDefaultPrimaryContactsItem,
+      ConsultationCtaSliceDefaultPrimaryOfficeHoursItem,
+      ConsultationCtaSliceDefaultPrimary,
+      ConsultationCtaSliceVariation,
+      ConsultationCtaSliceDefault,
       DentalHeroSlice,
       DentalHeroSliceDefaultPrimary,
       DentalHeroSliceVariation,
@@ -1325,15 +2122,41 @@ declare module "@prismicio/client" {
       LargeImageSliceDefaultPrimary,
       LargeImageSliceVariation,
       LargeImageSliceDefault,
+      MembershipPlansSlice,
+      MembershipPlansSliceDefaultPrimaryPlansItem,
+      MembershipPlansSliceDefaultPrimary,
+      MembershipPlansSliceVariation,
+      MembershipPlansSliceDefault,
       OfficeGallerySlice,
       OfficeGallerySliceDefaultPrimaryGalleryImagesItem,
       OfficeGallerySliceDefaultPrimary,
       OfficeGallerySliceVariation,
       OfficeGallerySliceDefault,
+      PatientInformationSlice,
+      PatientInformationSliceDefaultPrimary,
+      PatientInformationSliceVariation,
+      PatientInformationSliceDefault,
+      PatientStoriesSlice,
+      PatientStoriesSliceDefaultPrimaryTestimonialsItem,
+      PatientStoriesSliceDefaultPrimary,
+      PatientStoriesSliceVariation,
+      PatientStoriesSliceDefault,
       QualityCareMessageSlice,
       QualityCareMessageSliceDefaultPrimary,
+      QualityCareMessageSliceWithMediaPrimary,
       QualityCareMessageSliceVariation,
       QualityCareMessageSliceDefault,
+      QualityCareMessageSliceWithMedia,
+      ReviewsCtaSlice,
+      ReviewsCtaSliceDefaultPrimaryReviewsItem,
+      ReviewsCtaSliceDefaultPrimary,
+      ReviewsCtaSliceVariation,
+      ReviewsCtaSliceDefault,
+      ReviewsGridSlice,
+      ReviewsGridSliceDefaultPrimaryReviewsItem,
+      ReviewsGridSliceDefaultPrimary,
+      ReviewsGridSliceVariation,
+      ReviewsGridSliceDefault,
       ServicesGridSlice,
       ServicesGridSliceDefaultPrimaryServicesItem,
       ServicesGridSliceDefaultPrimary,

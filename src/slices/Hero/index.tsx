@@ -13,8 +13,14 @@ export type DentalHeroProps = SliceComponentProps<Content.DentalHeroSlice>;
  * Component for "DentalHero" Slices.
  */
 const DentalHero: FC<DentalHeroProps> = ({ slice }) => {
-  const { backgroundImage, buttonLink, description, heading, tagline } =
-    slice.primary;
+  const {
+    backgroundImage,
+    buttonLink,
+    description,
+    heading,
+    tagline,
+    with_overlay,
+  } = slice.primary;
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -27,6 +33,7 @@ const DentalHero: FC<DentalHeroProps> = ({ slice }) => {
         description={description}
         ctaButtons={buttonLink}
         className="bg-cover"
+        hasFadeOverlayLeft={with_overlay}
       />
     </section>
   );

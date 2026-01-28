@@ -1,0 +1,55 @@
+{
+  "id": "patient_information",
+  "type": "SharedSlice",
+  "name": "PatientInformation",
+  "description": "Patient information section with appointment request details and guidelines",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "Patient Information",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "request_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Request Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "request_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Request Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "content_info": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content Info",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,strong,em,hyperlink,image,list-item,o-list-item,embed"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

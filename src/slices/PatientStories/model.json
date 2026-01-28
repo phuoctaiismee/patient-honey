@@ -1,0 +1,50 @@
+{
+  "id": "patient_stories",
+  "type": "SharedSlice",
+  "name": "PatientStories",
+  "description": "A section displaying patient testimonial videos with a section title",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default patient stories variation",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "Section title",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "testimonials": {
+          "type": "Group",
+          "config": {
+            "label": "Testimonials",
+            "fields": {
+              "video_thumbnail": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "label": "Video Thumbnail"
+                }
+              },
+              "video_link": {
+                "type": "Embed",
+                "config": {
+                  "label": "Video Link",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "items": {}
+    }
+  ]
+}

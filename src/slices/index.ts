@@ -3,12 +3,19 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  case_showcase: dynamic(() => import("./CaseShowcase")),
   certifications: dynamic(() => import("./Certifications")),
+  consultation_cta: dynamic(() => import("./ConsultationCta")),
   dental_hero: dynamic(() => import("./Hero")),
   doctor_profile: dynamic(() => import("./DoctorProfile")),
   large_image: dynamic(() => import("./LargeImage")),
+  membership_plans: dynamic(() => import("./MembershipPlans")),
   office_gallery: dynamic(() => import("./OfficeGallery")),
+  patient_information: dynamic(() => import("./PatientInformation")),
+  patient_stories: dynamic(() => import("./PatientStories")),
   quality_care_message: dynamic(() => import("./MessageSection")),
+  reviews_cta: dynamic(() => import("./ReviewsCta")),
+  reviews_grid: dynamic(() => import("./ReviewsGrid")),
   services_grid: dynamic(() => import("./ServicesGrid")),
   team_section: dynamic(() => import("./TeamSection")),
   testimonial: dynamic(() => import("./Testimonial")),

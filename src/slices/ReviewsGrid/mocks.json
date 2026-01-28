@@ -1,0 +1,91 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"reviews": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"avatar",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+										"width": 3456,
+										"height": 3456
+									},
+									"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+									"width": 3456,
+									"height": 3456,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "percent",
+									"credits": null,
+									"__TYPE__": "ImageContent"
+								}
+							],
+							[
+								"authorName",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "search",
+									"type": "Text"
+								}
+							],
+							[
+								"rating",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "46",
+									"type": "Number"
+								}
+							],
+							[
+								"reviewText",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Magna nulla ad duis."
+											}
+										}
+									]
+								}
+							],
+							[
+								"review_date",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Date",
+									"value": "2017-11-13"
+								}
+							]
+						]
+					}
+				]
+			},
+			"viewMoreLink": {
+				"key": "c4b1a4a6-0e81-489d-b551-fe8f08416f52",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "daughter"
+				}
+			}
+		},
+		"items": []
+	}
+]

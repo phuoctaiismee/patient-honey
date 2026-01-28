@@ -1,0 +1,82 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Island"
+						}
+					}
+				]
+			},
+			"plans": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"planName",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "small",
+									"type": "Text"
+								}
+							],
+							[
+								"price",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "grandfather",
+									"type": "Text"
+								}
+							],
+							[
+								"features",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ea ipsum eiusmod exercitation eiusmod deserunt dolor aute."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"promotionalText": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non labore aliqua aute ex nostrud enim Lorem ut ut nostrud ut cupidatat reprehenderit aute minim. Tempor nisi ad ipsum. Labore laborum ex qui."
+						}
+					}
+				]
+			},
+			"howItWorks": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu amet proident ullamco occaecat. Et amet nisi quis ad nisi labore."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

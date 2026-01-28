@@ -9,7 +9,7 @@
 					{
 						"type": "heading2",
 						"content": {
-							"text": "Including"
+							"text": "Brief"
 						}
 					}
 				]
@@ -27,5 +27,50 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withMedia",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Studied"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Officia nostrud non et commodo velit eu dolor Lorem nostrud ad culpa. Id labore proident quis ad nulla fugiat veniam nostrud. Excepteur aute aliqua pariatur est occaecat ut sint consectetur."
+						}
+					}
+				]
+			},
+			"media_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis et aliquip irure et enim sunt qui non non officia occaecat veniam aliquip eiusmod."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

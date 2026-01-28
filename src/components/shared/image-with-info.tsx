@@ -30,7 +30,7 @@ const ImageWithInfo = ({
         field={image}
         width={720}
         height={800}
-        className="h-[400px] w-[360px] object-cover lg:h-[409px]"
+        className="h-[400px] lg:w-[360px] object-cover object-top lg:h-[409px]"
       />
       <div className="space-y-4.5 lg:space-y-7">
         <PrismicRichText

@@ -1,0 +1,94 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Table"
+						}
+					}
+				]
+			},
+			"office_name": {
+				"__TYPE__": "FieldContent",
+				"value": "audience",
+				"type": "Text"
+			},
+			"office_hours": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"day",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "seven",
+									"type": "Text"
+								}
+							],
+							[
+								"hours",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "hole",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"office_location": {
+				"position": {
+					"lat": 48.8606111,
+					"lng": 2.337644
+				},
+				"__TYPE__": "GeoPointContent"
+			},
+			"contacts": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "wrote",
+									"type": "Text"
+								}
+							],
+							[
+								"value",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "please",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "gentle",
+				"type": "Text"
+			},
+			"form_type": {
+				"__TYPE__": "FieldContent",
+				"value": "appointment",
+				"type": "Select"
+			}
+		},
+		"items": []
+	}
+]

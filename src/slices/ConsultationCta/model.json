@@ -1,0 +1,104 @@
+{
+  "id": "consultation_cta",
+  "type": "SharedSlice",
+  "name": "ConsultationCTA",
+  "description": "A consultation scheduling section with contact form and office information",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Schedule Your Consultation Today",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "office_name": {
+          "type": "Text",
+          "config": {
+            "label": "Office Name",
+            "placeholder": "Advanced Dentistry & Implant Center"
+          }
+        },
+        "office_location": {
+          "type": "GeoPoint",
+          "config": {
+            "label": "Office Location"
+          }
+        },
+        "contacts": {
+          "type": "Group",
+          "config": {
+            "label": "Contacts",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              },
+              "value": {
+                "type": "Text",
+                "config": {
+                  "label": "Value",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "office_hours": {
+          "type": "Group",
+          "config": {
+            "label": "Office Hours",
+            "fields": {
+              "day": {
+                "type": "Text",
+                "config": {
+                  "label": "Day",
+                  "placeholder": "Monday"
+                }
+              },
+              "hours": {
+                "type": "Text",
+                "config": {
+                  "label": "Hours",
+                  "placeholder": "9:00 AM - 5:00 PM"
+                }
+              }
+            }
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        },
+        "form_type": {
+          "type": "Select",
+          "config": {
+            "label": "Form Type",
+            "placeholder": "",
+            "options": [
+              "consultation",
+              "appointment"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

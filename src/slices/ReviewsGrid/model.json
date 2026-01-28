@@ -1,0 +1,69 @@
+{
+  "id": "reviews_grid",
+  "type": "SharedSlice",
+  "name": "ReviewsGrid",
+  "description": "A grid of review/testimonial cards displaying customer reviews with avatars, ratings, and testimonial text",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "",
+      "version": "initial",
+      "description": "Default variation of ReviewsGrid",
+      "imageUrl": "",
+      "primary": {
+        "reviews": {
+          "type": "Group",
+          "config": {
+            "label": "Reviews",
+            "fields": {
+              "avatar": {
+                "type": "Image",
+                "config": {
+                  "label": "Author Avatar"
+                }
+              },
+              "authorName": {
+                "type": "Text",
+                "config": {
+                  "label": "Author Name"
+                }
+              },
+              "review_date": {
+                "type": "Date",
+                "config": {
+                  "label": "Review Date",
+                  "placeholder": ""
+                }
+              },
+              "rating": {
+                "type": "Number",
+                "config": {
+                  "label": "Star Rating"
+                }
+              },
+              "reviewText": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Review Text",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em"
+                }
+              }
+            }
+          }
+        },
+        "viewMoreLink": {
+          "type": "Link",
+          "config": {
+            "label": "View More Button",
+            "allowText": true,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

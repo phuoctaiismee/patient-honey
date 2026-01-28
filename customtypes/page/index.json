@@ -17,6 +17,27 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "reviews_grid": {
+              "type": "SharedSlice"
+            },
+            "reviews_cta": {
+              "type": "SharedSlice"
+            },
+            "patient_stories": {
+              "type": "SharedSlice"
+            },
+            "patient_information": {
+              "type": "SharedSlice"
+            },
+            "membership_plans": {
+              "type": "SharedSlice"
+            },
+            "consultation_cta": {
+              "type": "SharedSlice"
+            },
+            "case_showcase": {
+              "type": "SharedSlice"
+            },
             "doctor_profile": {
               "type": "SharedSlice"
             },
