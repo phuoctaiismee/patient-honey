@@ -1,15 +1,16 @@
 "use client";
 
 import {
-    Map as MapGL,
-    Marker,
-    NavigationControl,
-    Popup,
+  Map as MapGL,
+  Marker,
+  NavigationControl,
+  Popup,
 } from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useState } from "react";
 
-const MAP_STYLE_URL = "https://tiles.stadiamaps.com/styles/outdoors.json";
+const MAP_STYLE_URL =
+  "https://api.maptiler.com/maps/streets-v2/style.json?key=dP6zOJ4NHO0dopwKwMXD";
 interface MapComponentProps {
   className?: string;
   center?: [number, number];
