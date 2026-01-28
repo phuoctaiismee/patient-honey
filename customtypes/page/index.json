@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "doctor_profile": {
+              "type": "SharedSlice"
+            },
+            "team_section": {
+              "type": "SharedSlice"
+            },
             "office_gallery": {
               "type": "SharedSlice"
             },

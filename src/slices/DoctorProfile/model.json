@@ -1,0 +1,56 @@
+{
+  "id": "doctor_profile",
+  "type": "SharedSlice",
+  "name": "DoctorProfile",
+  "description": "Doctor profile section with image, name, credentials, and biography",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default doctor profile variation",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "Meet The Doctor",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "doctor_image": {
+          "type": "Image",
+          "config": {
+            "label": "Doctor Image",
+            "constraint": {
+              "width": 400,
+              "height": 500
+            }
+          }
+        },
+        "doctor_name": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Doctor Name",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Biography",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

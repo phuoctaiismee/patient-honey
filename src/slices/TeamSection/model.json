@@ -1,0 +1,58 @@
+{
+  "id": "team_section",
+  "type": "SharedSlice",
+  "name": "TeamSection",
+  "description": "A section displaying team member profiles with photos, bios, and quotes",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default team section variation",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Meet The Team",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "team_members": {
+          "type": "Group",
+          "config": {
+            "label": "Team Members",
+            "fields": {
+              "member_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Member Image"
+                }
+              },
+              "member_name": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Member Name",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em"
+                }
+              },
+              "biography": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Biography",
+                  "multi": "paragraph,strong,em,hyperlink"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -5,9 +5,11 @@ import dynamic from "next/dynamic";
 export const components = {
   certifications: dynamic(() => import("./Certifications")),
   dental_hero: dynamic(() => import("./Hero")),
+  doctor_profile: dynamic(() => import("./DoctorProfile")),
   large_image: dynamic(() => import("./LargeImage")),
   office_gallery: dynamic(() => import("./OfficeGallery")),
   quality_care_message: dynamic(() => import("./MessageSection")),
   services_grid: dynamic(() => import("./ServicesGrid")),
+  team_section: dynamic(() => import("./TeamSection")),
   testimonial: dynamic(() => import("./Testimonial")),
 };
