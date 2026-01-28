@@ -20,6 +20,7 @@ const DentalHero: FC<DentalHeroProps> = ({ slice }) => {
     heading,
     tagline,
     with_overlay,
+    reverse_tagline
   } = slice.primary;
   return (
     <section
@@ -34,6 +35,7 @@ const DentalHero: FC<DentalHeroProps> = ({ slice }) => {
         ctaButtons={buttonLink}
         className="bg-cover"
         hasFadeOverlayLeft={with_overlay}
+        reverseHeading={reverse_tagline}
       />
     </section>
   );

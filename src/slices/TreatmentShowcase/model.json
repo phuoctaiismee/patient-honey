@@ -1,0 +1,49 @@
+{
+  "id": "treatment_showcase",
+  "type": "SharedSlice",
+  "name": "TreatmentShowcase",
+  "description": "A treatment showcase section featuring an image, title, description, and embedded video section",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "",
+      "version": "initial",
+      "description": "Default treatment showcase variation",
+      "imageUrl": "",
+      "primary": {
+        "featured_image": {
+          "type": "Image",
+          "config": {
+            "label": "Featured Image"
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "video_embed": {
+          "type": "Embed",
+          "config": {
+            "label": "Video Embed"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

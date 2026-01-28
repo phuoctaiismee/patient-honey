@@ -70,6 +70,55 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "withButtons",
+      "name": "With Buttons",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Enter heading",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Enter description",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "cta_buttons": {
+          "type": "Group",
+          "config": {
+            "label": "CTA Buttons",
+            "repeat": true,
+            "fields": {
+              "action": {
+                "type": "Link",
+                "config": {
+                  "label": "Action",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

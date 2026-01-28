@@ -1,0 +1,56 @@
+{
+  "id": "smile_callout",
+  "type": "SharedSlice",
+  "name": "SmileCallout",
+  "description": "Dental consultation callout section with image and description",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default variation",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Enter heading",
+            "allowTargetBlank": true,
+            "single": "heading2,strong"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Featured Image",
+            "constraint": {
+              "width": 600,
+              "height": 400
+            }
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Main Description",
+            "placeholder": "Enter description",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,heading2"
+          }
+        },
+        "padding_top": {
+          "type": "Boolean",
+          "config": {
+            "label": "Padding Top",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

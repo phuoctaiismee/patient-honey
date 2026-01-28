@@ -2,8 +2,10 @@
 
 import GhostTitle from "@/components/shared/ghost-title";
 import { ShineBorder } from "@/components/shared/shine-border";
-import { RichTextField } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Content, RichTextField } from "@prismicio/client";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { motion } from "motion/react";
 import React from "react";
@@ -12,6 +14,7 @@ interface HighlightSectionProps {
   title: RichTextField;
   description: RichTextField;
   bottomContent?: RichTextField;
+  bottomCtas?: Content.QualityCareMessageSliceWithButtonsPrimaryCtaButtonsItem[];
   hasDecoration?: boolean;
 }
 
@@ -19,10 +22,9 @@ const HighlightSection = ({
   title,
   description,
   bottomContent,
+  bottomCtas,
   hasDecoration = true,
 }: HighlightSectionProps) => {
-  console.log("🚀 ~ HighlightSection ~ description:", description)
-  console.log("🚀 ~ HighlightSection ~ bottomContent:", bottomContent);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -48,6 +50,7 @@ const HighlightSection = ({
       },
     },
   };
+  [].reverse;
 
   const highlightBoxVariants = {
     hidden: {
@@ -85,7 +88,7 @@ const HighlightSection = ({
       {description && description.length > 0 && (
         <motion.div
           variants={highlightBoxVariants as never}
-          className="relative container max-w-300 z-10 rounded-2xl bg-[#63636314] px-3 py-5 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
+          className="relative container max-w-300 z-10 rounded-2xl bg-[#63636314] px-3 py-5 space-y-4 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
           // style={{
           //   border: '1px solid',
           //   borderImageSource: 'linear-gradient(80.65deg, #000000 -0.1%, #FFFFFF 82.97%, #000000 119.83%)',
@@ -95,20 +98,46 @@ const HighlightSection = ({
             borderWidth={1}
             shineColor={["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]}
           />
-          <PrismicRichText
-            field={description}
-            components={{
-              paragraph: ({ children }) => (
-                <div className="text-lg leading-[170%] font-light tracking-[0%] [&>strong]:font-bold [&>em]:italic lg:text-xl lg:leading-[200%]">
-                  {children}
-                </div>
-              ),
-            }}
-          />
+          <div>
+            <PrismicRichText
+              field={description}
+              components={{
+                paragraph: ({ children }) => (
+                  <div
+                    className={cn(
+                      "text-lg leading-[170%] font-light tracking-[0%] [&>strong]:font-bold [&>em]:italic lg:text-xl lg:leading-[200%]",
+                      {
+                        "text-center": bottomCtas && bottomCtas.length > 0,
+                      },
+                    )}
+                  >
+                    {children}
+                  </div>
+                ),
+              }}
+            />
+          </div>
+
+          {bottomCtas && bottomCtas.length > 0 && (
+            <div className="flex items-center gap-2 justify-center">
+              {bottomCtas.map((cta, index) => (
+                <Button
+                  key={index}
+                  variant={index % 2 === 0 ? "default" : "secondary"}
+                  className="rounded-full"
+                  size="lg"
+                >
+                  <PrismicNextLink field={cta.action}>
+                    {cta.action.text}
+                  </PrismicNextLink>
+                </Button>
+              ))}
+            </div>
+          )}
         </motion.div>
       )}
 
-      {bottomContent && (
+      {bottomContent && bottomContent.length > 0 && (
         <PrismicRichText
           field={bottomContent}
           components={{

@@ -1,0 +1,51 @@
+{
+  "id": "service_card",
+  "type": "SharedSlice",
+  "name": "ServiceCard",
+  "description": "A service card component displaying a dental service specialty with title, description, features, and image",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default service card variation",
+      "docURL": "",
+      "version": "initial",
+      "imageUrl": "",
+      "primary": {
+        "features": {
+          "type": "Group",
+          "config": {
+            "label": "Features",
+            "fields": {
+              "feature_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Feature Name",
+                  "placeholder": "e.g., Dental Implants"
+                }
+              },
+              "feature_description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Feature Description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em,list-item"
+                }
+              },
+              "feature_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Feature Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

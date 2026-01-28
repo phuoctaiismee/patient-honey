@@ -17,6 +17,21 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "treatment_showcase": {
+              "type": "SharedSlice"
+            },
+            "video_carousel": {
+              "type": "SharedSlice"
+            },
+            "smile_callout": {
+              "type": "SharedSlice"
+            },
+            "service_card": {
+              "type": "SharedSlice"
+            },
+            "dental_implant_guide": {
+              "type": "SharedSlice"
+            },
             "reviews_grid": {
               "type": "SharedSlice"
             },

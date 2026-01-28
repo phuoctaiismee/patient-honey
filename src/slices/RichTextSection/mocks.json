@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor et enim ex consectetur voluptate fugiat aliqua enim ad. In commodo nostrud officia pariatur tempor incididunt mollit cupidatat laboris do adipisicing amet. Tempor proident deserunt aliqua."
+						}
+					}
+				]
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#32a026",
+				"type": "Color"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Smaller"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
