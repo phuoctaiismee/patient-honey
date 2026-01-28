@@ -137,6 +137,35 @@
           "placeholder": ""
         }
       },
+      "secondary_cta": {
+        "type": "Link",
+        "config": {
+          "label": "Secondary CTA",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
+      "office_hours_icon": {
+        "type": "Image",
+        "config": {
+          "label": "Office hours icon",
+          "constraint": {
+            "width": 24,
+            "height": 24
+          },
+          "thumbnails": []
+        }
+      },
+      "office_hours_label": {
+        "type": "Text",
+        "config": {
+          "label": "Office hours label",
+          "placeholder": ""
+        }
+      },
       "office_hours": {
         "type": "Group",
         "config": {
@@ -185,21 +214,44 @@
           }
         }
       },
-      "secondary_cta": {
-        "type": "Link",
-        "config": {
-          "label": "Secondary CTA",
-          "placeholder": "",
-          "select": null,
-          "allowTargetBlank": true,
-          "allowText": true,
-          "repeat": false
-        }
-      },
       "map_location": {
         "type": "GeoPoint",
         "config": {
           "label": "Map location"
+        }
+      },
+      "top_footer_contacts": {
+        "type": "Group",
+        "config": {
+          "label": "Top Footer Contacts",
+          "repeat": true,
+          "fields": {
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon",
+                "constraint": {
+                  "width": 24,
+                  "height": 24
+                },
+                "thumbnails": []
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "value": {
+              "type": "Text",
+              "config": {
+                "label": "Value",
+                "placeholder": ""
+              }
+            }
+          }
         }
       }
     }

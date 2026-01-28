@@ -48,6 +48,15 @@
           "config": {
             "label": "Background Image"
           }
+        },
+        "with_overlay": {
+          "type": "Boolean",
+          "config": {
+            "label": "With overlay",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
         }
       },
       "items": {}
