@@ -1,8 +1,9 @@
-import { FC } from "react";
+"use client";
+
+import PatientStoriesSection from "@/components/shared/patient-stories";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { PrismicRichText } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
+import { FC } from "react";
 
 /**
  * Props for `PatientStories`.
@@ -14,18 +15,18 @@ export type PatientStoriesProps =
  * Component for "PatientStories" Slices.
  */
 const PatientStories: FC<PatientStoriesProps> = ({ slice }) => {
+  const videos =
+    slice.primary.testimonials.map((item) => ({
+      poster: item.video_thumbnail.url || "",
+      src: item.video_link.embed_url || "",
+      alt: item.video_thumbnail.alt || "",
+    })) || [];
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText field={slice.primary.title} />
-      {slice.primary.testimonials.map((item, index) => (
-        <div key={index}>
-          <PrismicNextImage field={item.video} />
-          <p>{item.label}</p>
-        </div>
-      ))}
+      <PatientStoriesSection title={slice.primary.title} videos={videos} />
     </section>
   );
 };
