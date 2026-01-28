@@ -94,12 +94,11 @@ const SiteFooter = () => {
                     {clinic_name}
                   </h3>
 
-                  <PrismicNextLink
-                    field={secondary_cta}
-                    className="lg:h-12 h-[46px] px-4 py-1 rounded-[24px] bg-primary inline-flex whitespace-nowrap items-center justify-center font-semibold leading-[150%] tracking-[-0.24px]text-center hover:bg-white hover:text-black"
-                  >
-                    {secondary_cta?.text}
-                  </PrismicNextLink>
+                  <Button size="lg" className="w-fit">
+                    <PrismicNextLink field={secondary_cta}>
+                      {secondary_cta?.text}
+                    </PrismicNextLink>
+                  </Button>
                 </div>
                 <Separator className="border-2 border-[#4A4754]" />
                 <div className="space-y-6">
