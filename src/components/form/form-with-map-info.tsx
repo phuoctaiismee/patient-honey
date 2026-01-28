@@ -1,6 +1,5 @@
 "use client";
 
-import { Content, GeoPointField, KeyTextField } from "@prismicio/client";
 import { LucideClock3, MailIcon, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
 import React from "react";
@@ -8,10 +7,19 @@ import MapComponent from "../shared/map";
 
 interface FormWithMapInfoProps {
   children?: React.ReactNode;
-  office_location: GeoPointField;
-  office_name: KeyTextField;
-  office_hours: Content.ConsultationCtaSliceDefaultPrimaryOfficeHoursItem[];
-  contacts: Content.ConsultationCtaSliceDefaultPrimaryContactsItem[];
+  office_location: {
+    latitude: number;
+    longitude: number;
+  };
+  office_name: string;
+  office_hours: {
+    day: string;
+    hours: string;
+  }[];
+  contacts: {
+    label: string;
+    value: string;
+  }[];
 }
 
 const FormWithMapInfo = ({

@@ -58,19 +58,6 @@ const ReviewCTASection: React.FC<ReviewCTASectionProps> = ({
               </div>
             </div>
           ))}
-          {/* <div className="group relative flex h-30 w-full flex-col items-center justify-center gap-2 rounded-[12px] border-t-2 border-t-[#1089C0] bg-[#0F0D15] duration-200 ease-in-out transform-content hover:bg-[#1089C0] lg:flex-1">
-            <div className="absolute top-0 left-1/2 flex size-[45px] -translate-x-1/2 -translate-y-[60%] items-center justify-center rounded-full border border-white bg-[#BB0000]">
-              <YelpIcon className="size-5" />
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <div className="font-urbanist text-[44px] leading-[45px] font-semibold tracking-[2px] text-[#1089C0] group-hover:text-white">
-                28+
-              </div>
-              <div className="text-lg leading-[150%] font-normal tracking-[0%]">
-                4.5-stars Yelp Reviews
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

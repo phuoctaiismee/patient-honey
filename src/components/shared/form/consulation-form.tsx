@@ -6,8 +6,6 @@ import LabelSelect from "@/components/form/label-select";
 import LabelTextarea from "@/components/form/label-textarea";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Content } from "@prismicio/client";
-import { PrismicRichText } from "@prismicio/react";
 import { Loader2 } from "lucide-react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -24,17 +22,31 @@ const consultationSchema = z.object({
 });
 
 type ConsultationFormData = z.infer<typeof consultationSchema>;
-interface ConsultationFormProps extends Content.ConsultationCtaSlice {}
-const ConsultationForm = ({ primary }: ConsultationFormProps) => {
-  const {
-    heading,
-    contacts,
-    button_text,
-    form_type,
-    office_hours,
-    office_location,
-    office_name,
-  } = primary;
+interface ConsultationFormProps {
+  heading: React.ReactNode;
+  contacts: {
+    label: string;
+    value: string;
+  }[];
+  office_hours: {
+    day: string;
+    hours: string;
+  }[];
+  office_location: {
+    latitude: number;
+    longitude: number;
+  };
+  office_name: string;
+  button_text: string;
+}
+const ConsultationForm = ({
+  heading,
+  contacts,
+  button_text,
+  office_hours,
+  office_location,
+  office_name,
+}: ConsultationFormProps) => {
   const {
     register,
     handleSubmit,
@@ -69,18 +81,7 @@ const ConsultationForm = ({ primary }: ConsultationFormProps) => {
       office_location={office_location}
       office_name={office_name}
     >
-      <div className="px-3 pt-12 pb-4 lg:px-12">
-        <PrismicRichText
-          field={heading}
-          components={{
-            heading2: ({ children }) => (
-              <h3 className="font-urbanist text-[24px] leading-[100%] font-light [&>strong]:font-bold tracking-[5%] text-white lg:text-[24px]">
-                {children}
-              </h3>
-            ),
-          }}
-        />
-      </div>
+      <div className="px-3 pt-12 pb-4 lg:px-12">{heading}</div>
 
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
