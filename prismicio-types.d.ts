@@ -153,6 +153,60 @@ export interface FooterDocumentDataNavigationsItem {
 }
 
 /**
+ * Item in *Footer → Office hours*
+ */
+export interface FooterDocumentDataOfficeHoursItem {
+  /**
+   * Open time field in *Footer → Office hours*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.office_hours[].open_time
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  open_time: prismic.KeyTextField;
+
+  /**
+   * Close time field in *Footer → Office hours*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.office_hours[].close_time
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  close_time: prismic.KeyTextField;
+
+  /**
+   * Day field in *Footer → Office hours*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.office_hours[].day
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  day: prismic.SelectField<
+    | "Monday"
+    | "Tuesday"
+    | "Wednesday"
+    | "Thursday"
+    | "Friday"
+    | "Saturday"
+    | "Sunday"
+  >;
+
+  /**
+   * Is Closed field in *Footer → Office hours*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: footer.office_hours[].is_closed
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  is_closed: prismic.BooleanField;
+}
+
+/**
  * Content for Footer documents
  */
 interface FooterDocumentData {
@@ -249,6 +303,56 @@ interface FooterDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   copyright_text: prismic.RichTextField;
+
+  /**
+   * Clinic name field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.clinic_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  clinic_name: prismic.KeyTextField;
+
+  /**
+   * Office hours field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.office_hours[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  office_hours: prismic.GroupField<Simplify<FooterDocumentDataOfficeHoursItem>>;
+
+  /**
+   * Secondary CTA field in *Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.secondary_cta
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  secondary_cta: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Map location field in *Footer*
+   *
+   * - **Field Type**: GeoPoint
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.map_location
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/geopoint
+   */
+  map_location: prismic.GeoPointField;
 }
 
 /**
@@ -1026,6 +1130,7 @@ declare module "@prismicio/client" {
       FooterDocumentDataSocialLinksItem,
       FooterDocumentDataContactsItem,
       FooterDocumentDataNavigationsItem,
+      FooterDocumentDataOfficeHoursItem,
       HeaderDocument,
       HeaderDocumentData,
       HeaderDocumentDataNavigationsItem,

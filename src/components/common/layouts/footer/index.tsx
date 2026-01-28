@@ -204,8 +204,10 @@ const SiteFooter = () => {
               components={{
                 paragraph: ({ children }) => <p>{children}</p>,
                 hyperlink: ({ children }) => (
-                  <Link href={'/'} className="text-primary">{children}</Link>
-                )
+                  <Link href={"/"} className="text-primary">
+                    {children}
+                  </Link>
+                ),
               }}
             />
           </div>

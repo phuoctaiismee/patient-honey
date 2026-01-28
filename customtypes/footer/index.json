@@ -129,6 +129,78 @@
           "allowTargetBlank": true,
           "multi": "paragraph,strong,em,hyperlink"
         }
+      },
+      "clinic_name": {
+        "type": "Text",
+        "config": {
+          "label": "Clinic name",
+          "placeholder": ""
+        }
+      },
+      "office_hours": {
+        "type": "Group",
+        "config": {
+          "label": "Office hours",
+          "repeat": true,
+          "fields": {
+            "open_time": {
+              "type": "Text",
+              "config": {
+                "label": "Open time",
+                "placeholder": ""
+              }
+            },
+            "close_time": {
+              "type": "Text",
+              "config": {
+                "label": "Close time",
+                "placeholder": ""
+              }
+            },
+            "day": {
+              "type": "Select",
+              "config": {
+                "label": "Day",
+                "placeholder": "",
+                "options": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ]
+              }
+            },
+            "is_closed": {
+              "type": "Boolean",
+              "config": {
+                "label": "Is Closed",
+                "placeholder_false": "false",
+                "placeholder_true": "true",
+                "default_value": false
+              }
+            }
+          }
+        }
+      },
+      "secondary_cta": {
+        "type": "Link",
+        "config": {
+          "label": "Secondary CTA",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
+      "map_location": {
+        "type": "GeoPoint",
+        "config": {
+          "label": "Map location"
+        }
       }
     }
   }
