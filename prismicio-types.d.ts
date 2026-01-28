@@ -207,6 +207,41 @@ export interface FooterDocumentDataOfficeHoursItem {
 }
 
 /**
+ * Item in *Footer → Top Footer Contacts*
+ */
+export interface FooterDocumentDataTopFooterContactsItem {
+  /**
+   * Icon field in *Footer → Top Footer Contacts*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.top_footer_contacts[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Label field in *Footer → Top Footer Contacts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.top_footer_contacts[].label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Value field in *Footer → Top Footer Contacts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.top_footer_contacts[].value
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  value: prismic.KeyTextField;
+}
+
+/**
  * Content for Footer documents
  */
 interface FooterDocumentData {
@@ -316,17 +351,6 @@ interface FooterDocumentData {
   clinic_name: prismic.KeyTextField;
 
   /**
-   * Office hours field in *Footer*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.office_hours[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
-   */
-  office_hours: prismic.GroupField<Simplify<FooterDocumentDataOfficeHoursItem>>;
-
-  /**
    * Secondary CTA field in *Footer*
    *
    * - **Field Type**: Link
@@ -344,6 +368,39 @@ interface FooterDocumentData {
   >;
 
   /**
+   * Office hours icon field in *Footer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.office_hours_icon
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  office_hours_icon: prismic.ImageField<never>;
+
+  /**
+   * Office hours label field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.office_hours_label
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  office_hours_label: prismic.KeyTextField;
+
+  /**
+   * Office hours field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.office_hours[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  office_hours: prismic.GroupField<Simplify<FooterDocumentDataOfficeHoursItem>>;
+
+  /**
    * Map location field in *Footer*
    *
    * - **Field Type**: GeoPoint
@@ -353,6 +410,19 @@ interface FooterDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/geopoint
    */
   map_location: prismic.GeoPointField;
+
+  /**
+   * Top Footer Contacts field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.top_footer_contacts[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  top_footer_contacts: prismic.GroupField<
+    Simplify<FooterDocumentDataTopFooterContactsItem>
+  >;
 }
 
 /**
@@ -904,7 +974,7 @@ export interface DentalHeroSliceDefaultPrimary {
   backgroundImage: prismic.ImageField<never>;
 
   /**
-   * With Overlay field in *Hero → Default → Primary*
+   * With overlay field in *Hero → Default → Primary*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
@@ -2086,6 +2156,7 @@ declare module "@prismicio/client" {
       FooterDocumentDataContactsItem,
       FooterDocumentDataNavigationsItem,
       FooterDocumentDataOfficeHoursItem,
+      FooterDocumentDataTopFooterContactsItem,
       HeaderDocument,
       HeaderDocumentData,
       HeaderDocumentDataNavigationsItem,
