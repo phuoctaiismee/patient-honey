@@ -19,7 +19,7 @@ const ImageWithInfo = ({
   return (
     <div
       className={cn(
-        "flex flex-col justify-between gap-8 lg:items-center lg:gap-12",
+        "flex flex-col justify-between gap-8 items-center lg:gap-12",
         {
           "lg:flex-row": variant === "image-left",
           "lg:flex-row-reverse": variant === "image-right",
@@ -30,7 +30,7 @@ const ImageWithInfo = ({
         field={image}
         width={720}
         height={800}
-        className="h-[400px] lg:w-[360px] object-cover object-top lg:h-[409px]"
+        className="max-w-[340px] aspect-340/400 lg:max-w-[360px] object-cover object-top lg:h-[409px] lg:aspect-360/409"
       />
       <div className="space-y-4.5 lg:space-y-7">
         <PrismicRichText

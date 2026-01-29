@@ -151,8 +151,8 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
                     src={logo}
                     alt="Logo"
                     className="w-[200px] h-[-128.36px] text-primary"
-                    width={200}
-                    height={128}
+                    width={400}
+                    height={240}
                   />
                 )}
               </Link>
