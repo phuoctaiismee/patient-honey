@@ -48,7 +48,7 @@ const Certifications: FC<CertificationsProps> = ({ slice }) => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
-        className="mx-auto flex container py-20 max-w-[1200px] flex-col items-center gap-12 lg:flex-row lg:justify-between"
+        className="mx-auto flex container py-20   flex-col items-center gap-12 lg:flex-row lg:justify-between"
       >
         {slice.primary.certifications.map((item, index) => (
           <motion.div

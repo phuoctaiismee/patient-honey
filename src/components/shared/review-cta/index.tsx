@@ -26,7 +26,7 @@ const ReviewCTASection: React.FC<ReviewCTASectionProps> = ({
         fill
         className="absolute object-cover object-top inset-0 z-0"
       />
-      <div className="relative container h-[312px] w-full bg-[#63636314] px-8 pt-20 shadow-[inset_0px_0px_48px_#FFFFFF40] backdrop-blur-[10px] lg:px-20">
+      <div className="relative container   h-[312px] w-full bg-[#63636314] px-8 pt-20 shadow-[inset_0px_0px_48px_#FFFFFF40] rounded-md backdrop-blur-[10px] lg:px-20">
         <div className="space-y-1">
           <div
             className="text-center font-urbanist text-xl leading-[100%] font-light tracking-[5%] lg:text-[40px]"

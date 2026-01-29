@@ -68,13 +68,13 @@ const FormWithMapInfo = ({
   };
 
   return (
-    <div className="bg-[#161616] px-4 py-12 lg:px-30 lg:py-25">
+    <div className="bg-[#161616] py-12 lg:py-25">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7 }}
-        className="mx-auto flex max-w-[1200px] flex-col rounded-[24px] bg-[#303030] lg:flex-row"
+        className="flex container   flex-col rounded-[24px] bg-[#303030] lg:flex-row"
         style={{
           boxShadow: "0px 4px 16px 0px #00000029",
         }}

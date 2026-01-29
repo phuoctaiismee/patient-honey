@@ -106,6 +106,7 @@ const HeroSection = ({
         initial="hidden"
         animate="visible"
         className="contents"
+        
       >
         {/* subtitle */}
         {subTitle && !reverseHeading && (

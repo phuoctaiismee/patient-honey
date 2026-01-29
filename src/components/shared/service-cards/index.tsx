@@ -85,7 +85,7 @@ const ServicesCardsSection = ({ services }: ServiceCardsProps) => {
 
   return (
     <div className="bg-[#303030] px-4 py-12 lg:px-30 lg:py-25">
-      <div className="container mx-auto flex flex-col gap-8 lg:gap-16">
+      <div className="container   mx-auto flex flex-col gap-8 lg:gap-16">
         {services.map((service, index) => (
           <motion.div
             key={index}

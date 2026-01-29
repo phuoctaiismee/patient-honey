@@ -24,7 +24,7 @@ const InfoSection = ({
      
     >
       <GhostTitle title={title} />
-      <div className="container mx-auto space-y-[68px]">
+      <div className="container   mx-auto space-y-[68px]">
         <div className="flex items-center justify-center">
           <PrismicNextLink field={cardLink}>
             <div className="group relative flex h-[260px] w-full cursor-pointer flex-col items-center justify-center gap-2 rounded-[12px] border-t-2 border-t-[#1089C0] bg-[#303030] px-7 duration-200 ease-in-out transform-content hover:bg-[#1089C0] lg:max-w-[576px] lg:flex-1">

@@ -73,7 +73,7 @@ const PatientStoriesSection: React.FC<PatientStoriesSectionProps> = ({
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 container  md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         {videos.map((video, index) => (
           <motion.div key={index} variants={videoItemVariants}>
@@ -84,7 +84,7 @@ const PatientStoriesSection: React.FC<PatientStoriesSectionProps> = ({
       {description && description.length > 0 && (
         <motion.div
           variants={highlightBoxVariants as never}
-          className="relative container max-w-300 z-10 rounded-2xl bg-[#63636314] px-3 py-5 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
+          className="relative container z-10 rounded-2xl bg-[#63636314] px-3 py-5 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
           // style={{
           //   border: '1px solid',
           //   borderImageSource: 'linear-gradient(80.65deg, #000000 -0.1%, #FFFFFF 82.97%, #000000 119.83%)',
