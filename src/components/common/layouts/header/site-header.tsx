@@ -30,16 +30,22 @@ export const SiteHeader = ({ data }: SiteHeaderProps) => {
   const pathname = usePathname();
   const { logo, navigations, ctaButton } = data;
 
+  console.log({
+    navigations,
+  });
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openCollapsibleKey, setOpenCollapsibleKey] = useState<string | null>(
     null,
   );
 
   const isNavigationActive = (item: NavigationItem): boolean => {
-    return (
-      isActiveRoute(pathname, item.href) ||
-      item.subItems.some((sub) => isActiveRoute(pathname, sub.href))
-    );
+    // For items with subitems, only check if any subitem is active
+    // For items without subitems, check if the item itself is active
+    if (item.subItems.length > 0) {
+      return item.subItems.some((sub) => isActiveRoute(pathname, sub.href));
+    }
+    return isActiveRoute(pathname, item.href);
   };
 
   const handleToggleCollapsible = (key: string) => {
@@ -58,6 +64,22 @@ export const SiteHeader = ({ data }: SiteHeaderProps) => {
       document.body.style.overflow = "auto";
     };
   }, [isMobileMenuOpen]);
+
+  // Auto-open collapsible if a sub-item is active
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      const activeParent = navigations.find((item) => {
+        return (
+          item.subItems.length > 0 &&
+          item.subItems.some((sub) => isActiveRoute(pathname, sub.href))
+        );
+      });
+
+      if (activeParent && activeParent.text) {
+        setOpenCollapsibleKey(activeParent.text);
+      }
+    }
+  }, [isMobileMenuOpen, navigations, pathname]);
 
   return (
     <>

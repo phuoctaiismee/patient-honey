@@ -67,11 +67,11 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
                     </Link>
                   </Button>
                 </div>
-                <Separator className="border-2 border-[#4A4754]" />
+                <Separator className="lg:border-2 border-[#4A4754]" />
                 <div className="space-y-6">
                   {topFooterContacts.map((item) => (
                     <div
-                      className="grid grid-cols-1 lg:grid-cols-4"
+                      className="grid grid-cols-1 lg:grid-cols-4 gap-2"
                       key={item.label}
                     >
                       <div className="flex items-center gap-6">
@@ -137,7 +137,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
                 </div>
               </div>
             </div>
-            <Separator className="border-2 border-[#4A4754]" />
+            <Separator className="lg:border-2 border-[#4A4754]" />
           </>
         )}
         <div className="flex flex-col gap-20">

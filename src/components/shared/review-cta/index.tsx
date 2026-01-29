@@ -24,11 +24,18 @@ const ReviewCTASection: React.FC<ReviewCTASectionProps> = ({
         src={bgImage || ""}
         alt="bg_reviews_statistics"
         fill
-        className="absolute object-cover object-center inset-0 z-0"
+        className="absolute object-cover object-top inset-0 z-0"
       />
-      <div className="relative container   h-[312px] w-full bg-[#63636314] px-8 pt-20 shadow-[inset_0px_0px_48px_#FFFFFF40] rounded-md backdrop-blur-[10px] lg:px-20">
+      <div className="relative container h-[312px] w-full bg-[#63636314] px-8 pt-20 shadow-[inset_0px_0px_48px_#FFFFFF40] rounded-md backdrop-blur-[10px] lg:px-20">
         <div className="space-y-1">
-          <div className="text-center font-urbanist text-xl leading-[100%] font-light tracking-[5%] lg:text-[40px]">
+          <div
+            className="text-center font-urbanist text-xl leading-[100%] font-light tracking-[5%] lg:text-[40px]"
+            style={{
+              border: "4px solid",
+              borderImageSource:
+                "linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0%, rgba(102, 102, 102, 0.12) 100%)",
+            }}
+          >
             {subheading}
           </div>
           <div className="text-center font-urbanist text-xl leading-[100%] font-bold tracking-[5%] lg:text-[40px]">
