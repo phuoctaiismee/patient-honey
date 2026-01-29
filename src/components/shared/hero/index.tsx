@@ -10,9 +10,9 @@ import {
 } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -23,7 +23,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -65,8 +65,6 @@ const HeroSection = ({
   titleClassName,
   subTitleClassName,
 }: HeroSectionProps) => {
-  console.log("🚀 ~ HeroSection ~ description:", description);
-
   return (
     <section
       className={cn(
@@ -77,9 +75,6 @@ const HeroSection = ({
       style={{
         backgroundColor:
           "linear-gradient(90.01deg, #000000 25.98%, rgba(0, 0, 0, 0) 94.08%)",
-        // // backgroundImage: backgroundImageUrl ? `url(${backgroundImageUrl})` : 'none',
-        // backgroundSize,
-        // backgroundPosition,
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -111,7 +106,7 @@ const HeroSection = ({
         {/* subtitle */}
         {subTitle && !reverseHeading && (
           <motion.h4
-            variants={itemVariants as never}
+            variants={itemVariants}
             className={cn(
               "relative z-10 font-urbanist text-2xl leading-[100%] font-normal tracking-[5%] lg:text-[40px] text-shadow-2xs",
               subTitleClassName,
