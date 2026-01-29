@@ -23,7 +23,7 @@ const DentalImplantGuide: FC<DentalImplantGuideProps> = ({ slice }) => {
         ...(background_color ? { backgroundColor: background_color } : {}),
       }}
     >
-      <div className="container max-w-[1200px] py-12 lg:py-20 space-y-8">
+      <div className="container   py-12 lg:py-20 space-y-8">
         {title && title.length > 0 && (
           <GhostTitle title={title} coverText={cover_heading} />
         )}

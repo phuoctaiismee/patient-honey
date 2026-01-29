@@ -77,7 +77,7 @@ const HighlightSection = ({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      className="relative flex flex-col justify-center gap-12 px-4 py-12 lg:px-30 lg:py-25"
+      className="relative flex flex-col justify-center gap-12 py-12 lg:py-25 overflow-hidden"
       style={{
         background:
           "linear-gradient(270deg, #181818 0%, rgba(64, 64, 64, 0) 100%)",
@@ -90,7 +90,7 @@ const HighlightSection = ({
       {description && description.length > 0 && (
         <motion.div
           variants={highlightBoxVariants as never}
-          className="relative container max-w-300 z-10 rounded-2xl bg-[#63636314] px-3 py-5 space-y-4 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
+          className="relative container z-10 rounded-2xl bg-[#63636314] py-5 space-y-4 shadow-[inset_-8px_-8px_32px_rgba(255,255,255,0.08)] backdrop-blur-[10px] lg:p-20"
           // style={{
           //   border: '1px solid',
           //   borderImageSource: 'linear-gradient(80.65deg, #000000 -0.1%, #FFFFFF 82.97%, #000000 119.83%)',
@@ -140,36 +140,38 @@ const HighlightSection = ({
       )}
 
       {bottomContent && bottomContent.length > 0 && (
-        <PrismicRichText
-          field={bottomContent}
-          components={{
-            image: ({ node }) => {
-              return (
-                <PrismicNextImage
-                  field={node}
-                  width={node.dimensions.width}
-                  height={node.dimensions.height}
-                  className="object-cove mx-auto"
-                />
-              );
-            },
-            heading4: ({ children }) => (
-              <h4 className="font-urbanist text-[28px] leading-[100%] font-light [&>strong]:font-bold tracking-[5%] text-white lg:text-[48px]">
-                {children}
-              </h4>
-            ),
-            paragraph: ({ children }) => (
-              <p className="text-base leading-[150%] font-light [&>strong]:font-bold tracking-[0%] text-[#F1F1F1] lg:text-lg">
-                {children}
-              </p>
-            ),
-            listItem: ({ children }) => (
-              <li className="text-base list-disc list-inside leading-[150%] [&>strong]:font-bold font-light tracking-[0%] text-[#F1F1F1] lg:text-lg">
-                {children}
-              </li>
-            ),
-          }}
-        />
+        <div className="container   space-y-8">
+          <PrismicRichText
+            field={bottomContent}
+            components={{
+              image: ({ node }) => {
+                return (
+                  <PrismicNextImage
+                    field={node}
+                    width={node.dimensions.width}
+                    height={node.dimensions.height}
+                    className="object-cove mx-auto"
+                  />
+                );
+              },
+              heading4: ({ children }) => (
+                <h4 className="font-urbanist text-[28px] leading-[100%] font-light [&>strong]:font-bold tracking-[5%] text-white lg:text-[48px]">
+                  {children}
+                </h4>
+              ),
+              paragraph: ({ children }) => (
+                <p className="text-base leading-[150%] font-light [&>strong]:font-bold tracking-[0%] text-[#F1F1F1] lg:text-lg">
+                  {children}
+                </p>
+              ),
+              listItem: ({ children }) => (
+                <li className="text-base list-disc list-inside leading-[150%] [&>strong]:font-bold font-light tracking-[0%] text-[#F1F1F1] lg:text-lg">
+                  {children}
+                </li>
+              ),
+            }}
+          />
+        </div>
       )}
 
       {/* decoration */}

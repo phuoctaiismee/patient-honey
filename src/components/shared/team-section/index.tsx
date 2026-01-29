@@ -72,7 +72,7 @@ const TeamSection = ({
   return (
     <div
       className={cn(
-        "flex flex-col gap-8 bg-[#252525] px-4 py-12 lg:gap-16 lg:px-30 lg:py-25",
+        "flex flex-col  gap-8 bg-[#252525] py-12 lg:gap-16 lg:py-25",
         className,
       )}
     >
@@ -86,7 +86,7 @@ const TeamSection = ({
       </motion.div>
 
       <motion.div
-        className="container mx-auto space-y-8 lg:space-y-16"
+        className="container   mx-auto space-y-8 lg:space-y-16"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

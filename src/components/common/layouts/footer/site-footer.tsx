@@ -46,7 +46,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
       <footer className="flex flex-col gap-25 container py-20">
         {!shouldHideFooterHeader && (
           <>
-            <div className="container mx-auto flex flex-col gap-[60] lg:flex-row">
+            <div className="w-full mx-auto flex flex-col gap-[60] lg:flex-row">
               <MapComponent
                 className="h-[366px] lg:h-auto lg:flex-1"
                 center={[

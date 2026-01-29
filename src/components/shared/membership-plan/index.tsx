@@ -18,11 +18,11 @@ const MembershipPlan = ({
   return (
     <div className="flex flex-col gap-8 bg-[#252525] px-4 py-12 lg:gap-12 lg:px-30 lg:py-25">
       <GhostTitle title={title} />
-      <div className="flex flex-col justify-center gap-8 lg:flex-row lg:gap-10">
+      <div className="flex flex-col container   justify-center gap-8 lg:flex-row lg:gap-10">
         {plans.map((plan) => (
           <div
             key={plan.planName}
-            className="space-y-6 rounded-[16px] border-t-2 border-t-[#1089C0] bg-[#303030] p-8"
+            className="space-y-6 w-full rounded-[16px] border-t-2 border-t-[#1089C0] bg-[#303030] p-8"
           >
             <h3 className="font-urbanist uppercase text-[28px] leading-[140%] font-extrabold tracking-[2px] text-[#1089C0] lg:text-[28px]">
               {plan.planName}
@@ -62,7 +62,7 @@ const MembershipPlan = ({
           ),
         }}
       />
-      <div className="container mx-auto space-y-3">
+      <div className="container   space-y-3">
         <PrismicRichText
           field={howItWorks}
           components={{

@@ -23,8 +23,8 @@ const ReviewGridSection: React.FC<ReviewGridProps> = ({
 }) => {
   const reviewsLength = useMemo(() => reviews.length, [reviews]);
   return (
-    <div className="space-y-8 bg-[#161616] px-4 py-12 lg:px-30 lg:py-25">
-      <div className="lg:container lg:mx-auto flex flex-col gap-8 lg:flex-row">
+    <div className="space-y-8 bg-[#161616] py-12 lg:py-25">
+      <div className="container   lg:mx-auto flex flex-col gap-8 lg:flex-row">
         <motion.div
           initial="hidden"
           whileInView="visible"

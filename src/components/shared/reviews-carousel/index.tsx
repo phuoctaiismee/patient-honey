@@ -58,11 +58,11 @@ const CustomerReviewCarousel = ({
         <PrismicNextImage
           key={current}
           field={reviews?.[current - 1]?.author_image}
-          className="h-[480px] w-full object-cover lg:h-full animate__animated animate__fadeIn"
+          className="h-[480px] w-full object-cover lg:h-full max-h-[800px] animate__animated animate__fadeIn"
         />
       </div>
       <div className="flex-1">
-        <div className="relative space-y-25 bg-transparent py-15">
+        <div className="relative h-full flex flex-col space-y-25 bg-transparent py-15">
           <Image
             src={bg_customers_reviews}
             alt="Background Customers Reviews"
@@ -102,6 +102,7 @@ const CustomerReviewCarousel = ({
               </CarouselContent>
             </Carousel>
           </div>
+          <div className="flex-1"/>
           <div className="flex items-center justify-between px-4 lg:px-12">
             {viewMore?.text && (
               <Button className="rounded-[24px]" size="lg">

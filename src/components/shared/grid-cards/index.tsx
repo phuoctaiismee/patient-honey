@@ -26,7 +26,7 @@ const CardGridSection = ({ title, items, action }: CardGridSectionProps) => {
   return (
     <div className="flex flex-col gap-8 bg-[#252525] px-4 py-12 lg:gap-16 lg:px-30 lg:py-25">
       <GhostTitle title={title} />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 container   gap-6 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
           <HoverCard
             key={item.id}

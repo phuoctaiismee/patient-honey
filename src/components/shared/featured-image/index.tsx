@@ -15,7 +15,7 @@ const FeaturedImageSection = ({
   return (
     <div
       className={cn(
-        "h-140 w-full lg:h-auto lg:max-h-170 relative overflow-hidden",
+        "aspect-auto w-full lg:aspect-1440/680 max-h-[800px] relative overflow-hidden",
         className,
       )}
     >
