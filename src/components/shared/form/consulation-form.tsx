@@ -81,11 +81,11 @@ const ConsultationForm = ({
       office_location={office_location}
       office_name={office_name}
     >
-      <div className="px-3 pt-12 pb-4 lg:px-12 font-urbanist">{heading}</div>
+      <div className="pt-12 pb-4 lg:px-12 font-urbanist">{heading}</div>
 
       <form
         onSubmit={handleSubmit(handleFormSubmit)}
-        className="space-y-12 px-3 pt-6 pb-12 lg:px-12"
+        className="space-y-12 pt-6 pb-12 lg:px-12"
       >
         <LabelInput
           label="First Name"

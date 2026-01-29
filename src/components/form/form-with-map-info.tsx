@@ -74,7 +74,7 @@ const FormWithMapInfo = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7 }}
-        className="flex container   flex-col rounded-[24px] bg-[#303030] lg:flex-row"
+        className="flex container flex-col rounded-[24px] bg-[#303030] lg:flex-row"
         style={{
           boxShadow: "0px 4px 16px 0px #00000029",
         }}
@@ -147,7 +147,7 @@ const FormWithMapInfo = ({
                   {office_hours.map((hour, index) => (
                     <div
                       key={index}
-                      className="grid grid-cols-1 md:grid-cols-6 items-start gap-2 lg:gap-[40px] text-base leading-[200%] font-light tracking-[0.25%]"
+                      className="grid grid-cols-2 md:grid-cols-6 items-start gap-2 lg:gap-[40px] text-base leading-[200%] font-light tracking-[0.25%]"
                     >
                       <span className="md:col-span-2">{hour.day}</span>
                       <span className="md:col-span-4">{hour.hours}</span>
