@@ -57,7 +57,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
               />
               <div className="flex-1 space-y-8">
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-                  <h3 className="text-[28px] leading-[100%] font-medium tracking-[5%] lg:text-[40px]">
+                  <h3 className="text-[28px] font-urbanist leading-[100%] font-medium tracking-[5%] lg:text-[40px]">
                     {clinicName}
                   </h3>
 
@@ -231,7 +231,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
               </svg>
 
               <div className="space-y-6">
-                <h3 className="text-[26px] leading-[100%] font-bold tracking-[5%]">
+                <h3 className="font-urbanist text-[26px] leading-[100%] font-bold tracking-[5%]">
                   {contactLabel}
                 </h3>
                 <div className="flex flex-1 flex-col items-start gap-4.5 md:flex-row md:justify-between">
@@ -248,7 +248,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
                 </div>
               </div>
               <div className="space-y-6">
-                <h3 className="text-[26px] leading-[100%] font-bold tracking-[5%]">
+                <h3 className="font-urbanist text-[26px] leading-[100%] font-bold tracking-[5%]">
                   {navigationLabel}
                 </h3>
                 <div className="flex flex-col items-start gap-4.5 lg:flex-row md:justify-between">
