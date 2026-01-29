@@ -53,12 +53,12 @@ const CustomerReviewCarousel = ({
   }, [api]);
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:max-h-[800px] lg:flex-row">
       <div className="flex-1">
         <PrismicNextImage
           key={current}
           field={reviews?.[current - 1]?.author_image}
-          className="h-[480px] w-full object-cover lg:h-full max-h-[800px] animate__animated animate__fadeIn"
+          className="h-[480px] w-full object-cover lg:h-full  animate__animated animate__fadeIn"
         />
       </div>
       <div className="flex-1">

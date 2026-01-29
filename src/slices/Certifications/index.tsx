@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
@@ -48,7 +48,7 @@ const Certifications: FC<CertificationsProps> = ({ slice }) => {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
-        className="mx-auto flex container py-20   flex-col items-center gap-12 lg:flex-row lg:justify-between"
+        className="mx-auto flex container py-20 flex-col justify-center items-center gap-25 lg:flex-row flex-wrap"
       >
         {slice.primary.certifications.map((item, index) => (
           <motion.div
