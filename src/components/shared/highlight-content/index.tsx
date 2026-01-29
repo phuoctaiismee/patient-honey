@@ -1,5 +1,6 @@
 "use client";
 
+import { circle_blur } from "@/assets";
 import GhostTitle from "@/components/shared/ghost-title";
 import { ShineBorder } from "@/components/shared/shine-border";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,7 @@ import { Content, KeyTextField, RichTextField } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import { motion } from "motion/react";
-import React from "react";
+import Image from "next/image";
 
 // const containerVariants = {
 //   hidden: { opacity: 0 },
@@ -90,7 +91,7 @@ const HighlightSection = ({
       </motion.div>
 
       {description && description.length > 0 && (
-        <div className="container" style={{ willChange: "opacity, transform" }}>
+        <div className="container">
           <motion.div
             // variants={highlightBoxVariants as never}
             initial={{
@@ -113,6 +114,7 @@ const HighlightSection = ({
             //   border: '1px solid',
             //   borderImageSource: 'linear-gradient(80.65deg, #000000 -0.1%, #FFFFFF 82.97%, #000000 119.83%)',
             // }}
+            style={{ willChange: "opacity, transform" }}
           >
             <ShineBorder
               borderWidth={1}
@@ -195,8 +197,8 @@ const HighlightSection = ({
 
       {/* decoration */}
       {hasDecoration && (
-        <div className="absolute top-0 right-0">
-          <CircleDecoration />
+        <div className="absolute top-0 lg:-top-20 right-0 z-0 pointer-events-none">
+          <Image src={circle_blur} width={600} height={600} alt="decoration" />
         </div>
       )}
     </motion.div>
@@ -204,51 +206,3 @@ const HighlightSection = ({
 };
 
 export default HighlightSection;
-
-const CircleDecoration: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="783"
-    height="643"
-    fill="none"
-    viewBox="0 0 783 643"
-    {...props}
-  >
-    <g filter="url(#a)">
-      <circle cx="676" cy="119" r="526" fill="url(#b)"></circle>
-    </g>
-    <defs>
-      <radialGradient
-        id="b"
-        cx="0"
-        cy="0"
-        r="1"
-        gradientTransform="matrix(0 526 -526 0 676 119)"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#545454"></stop>
-        <stop offset="1" stopColor="#141414" stopOpacity="0"></stop>
-      </radialGradient>
-      <filter
-        id="a"
-        width="1352"
-        height="1352"
-        x="0"
-        y="-557"
-        colorInterpolationFilters="sRGB"
-        filterUnits="userSpaceOnUse"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
-        <feBlend
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        ></feBlend>
-        <feGaussianBlur
-          result="effect1_foregroundBlur_324_30726"
-          stdDeviation="75"
-        ></feGaussianBlur>
-      </filter>
-    </defs>
-  </svg>
-);
