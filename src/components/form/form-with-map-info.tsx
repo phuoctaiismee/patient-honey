@@ -95,11 +95,13 @@ const FormWithMapInfo = ({
           transition={{ duration: 0.6, delay: 0.2 }}
           className="lg:max-w-[460px]"
         >
-          <MapComponent
-            className="h-[296px] w-full overflow-hidden lg:rounded-tr-[24px]"
-            center={[office_location.longitude, office_location.latitude]}
-            zoom={18}
-          />
+          <div className="lg:-mr-4">
+            <MapComponent
+              className="h-[296px] w-full overflow-hidden lg:rounded-tr-[24px]"
+              center={[office_location.longitude, office_location.latitude]}
+              zoom={18}
+            />
+          </div>
           <motion.div
             initial="hidden"
             whileInView="visible"
