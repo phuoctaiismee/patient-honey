@@ -81,7 +81,7 @@ const ConsultationForm = ({
       office_location={office_location}
       office_name={office_name}
     >
-      <div className="px-3 pt-12 pb-4 lg:px-12">{heading}</div>
+      <div className="px-3 pt-12 pb-4 lg:px-12 font-urbanist">{heading}</div>
 
       <form
         onSubmit={handleSubmit(handleFormSubmit)}

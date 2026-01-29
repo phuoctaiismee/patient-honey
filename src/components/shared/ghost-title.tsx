@@ -17,7 +17,7 @@ const GhostTitle = ({ title, coverText }: GhostTitleProps) => {
         whileInView={{ opacity: 0.05, scale: 1 }}
         transition={{ duration: 1.1, ease: "easeInOut" }}
         viewport={{ once: true }} // <-- Chỉ chạy 1 lần
-        className="absolute top-1/2 left-1/2 line-clamp-2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[40px] leading-[100%] font-extrabold tracking-[5%] uppercase opacity-5 lg:line-clamp-1 lg:text-[96px] lg:whitespace-nowrap"
+        className="absolute top-1/2 left-1/2 line-clamp-2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-[40px] leading-[100%] font-extrabold tracking-[5%] uppercase opacity-5 lg:line-clamp-1 lg:text-[96px] lg:whitespace-nowrap font-urbanist"
       >
         {coverText ?? titleBlur}
       </motion.span>
@@ -31,7 +31,7 @@ const GhostTitle = ({ title, coverText }: GhostTitleProps) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeInOut" }}
               viewport={{ once: true }} // <-- Chỉ chạy 1 lần
-              className="text-center text-[28px] leading-[100%] font-light [&>strong]:font-bold tracking-[5%] lg:text-[48px]"
+              className="text-center font-urbanist text-[28px] leading-[100%] font-light [&>strong]:font-bold tracking-[5%] lg:text-[48px]"
             >
               {children}
             </motion.h2>

@@ -4,17 +4,17 @@ import { bg_customers_reviews } from "@/assets";
 import { QuoteIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import {
-    Carousel,
-    CarouselApi,
-    CarouselContent,
-    CarouselItem,
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import {
-    ImageField,
-    KeyTextField,
-    LinkField,
-    RichTextField,
+  ImageField,
+  KeyTextField,
+  LinkField,
+  RichTextField,
 } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
@@ -102,7 +102,7 @@ const CustomerReviewCarousel = ({
               </CarouselContent>
             </Carousel>
           </div>
-          <div className="flex-1"/>
+          <div className="flex-1" />
           <div className="flex items-center justify-between px-4 lg:px-12">
             {viewMore?.text && (
               <Button className="rounded-[24px]" size="lg">

@@ -19,10 +19,7 @@ const InfoSection = ({
   infoContent,
 }: InfoSectionProps) => {
   return (
-    <div
-      className="relative space-y-8 px-4 py-12 lg:space-y-12 lg:px-30 lg:py-25 bg-linear-to-br from-[#181818]"
-     
-    >
+    <div className="relative space-y-8 px-4 py-12 lg:space-y-12 lg:px-30 lg:py-25 bg-linear-to-br from-[#181818]">
       <GhostTitle title={title} />
       <div className="container   mx-auto space-y-[68px]">
         <div className="flex items-center justify-center">
@@ -75,11 +72,10 @@ const InfoSection = ({
               ),
             }}
           />
-          
         </div>
       </div>
 
-      <CircleDecoration className="absolute top-0 right-0" />
+      <CircleDecoration className="absolute top-0 right-0 z-[-1] lg:block hidden" />
     </div>
   );
 };

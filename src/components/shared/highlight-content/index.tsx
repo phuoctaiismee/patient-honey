@@ -178,15 +178,9 @@ const HighlightSection = ({
 
       {/* decoration */}
       {hasDecoration && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: [0.25, 0.4, 0.25, 1] }}
-          className="absolute top-0 right-0"
-        >
+        <div className="absolute top-0 right-0">
           <CircleDecoration />
-        </motion.div>
+        </div>
       )}
     </motion.div>
   );
