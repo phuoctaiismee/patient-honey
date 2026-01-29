@@ -1,6 +1,13 @@
 "use client";
 
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { DialogTitle } from "@radix-ui/react-dialog";
 import { ReactNode, useEffect, useRef } from "react";
 
 type VideoLightboxProps = {
@@ -39,6 +46,10 @@ export function VideoLightbox({
       <DialogTrigger asChild>{trigger}</DialogTrigger>
 
       <DialogContent className="max-h-[90vh] max-w-[90vw] overflow-hidden rounded-xl border-none bg-black p-0">
+        <DialogHeader className="sr-only">
+          <DialogTitle>Video Lightbox</DialogTitle>
+          <DialogDescription>Preview video</DialogDescription>
+        </DialogHeader>
         <div className="relative aspect-video w-full bg-black">
           {videoSrc ? (
             <video
@@ -50,7 +61,9 @@ export function VideoLightbox({
               className="h-full w-full object-contain"
             />
           ) : (
-            <div>No Video</div>
+            <div className="size-full flex items-center justify-center">
+              No Video Available
+            </div>
           )}
         </div>
       </DialogContent>

@@ -1,8 +1,14 @@
-'use client';
+"use client";
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { cn } from '@/lib/utils';
-import React from 'react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { cn } from "@/lib/utils";
+import React from "react";
 
 interface LabelSelectProps {
   label: string;
@@ -16,7 +22,19 @@ interface LabelSelectProps {
 }
 
 const LabelSelect = React.forwardRef<HTMLButtonElement, LabelSelectProps>(
-  ({ label, error, options, placeholder = 'Select an option', value, onValueChange, className, disabled }, ref) => {
+  (
+    {
+      label,
+      error,
+      options,
+      placeholder = "Select an option",
+      value,
+      onValueChange,
+      className,
+      disabled,
+    },
+    ref,
+  ) => {
     return (
       <div className="relative w-full">
         <label className="pointer-events-none absolute top-0 left-3 z-10 -translate-y-1/2 bg-[#303030] px-[6px] text-sm">
@@ -26,17 +44,26 @@ const LabelSelect = React.forwardRef<HTMLButtonElement, LabelSelectProps>(
           <SelectTrigger
             ref={ref}
             className={cn(
-              'h-14! w-full rounded-[4px] border-[#9B9B9B] bg-[#303030]!',
-              error && 'border-destructive',
+              "h-14! w-full rounded-[4px] border-[#9B9B9B] bg-[#303030]! text-left",
+              error && "border-destructive",
               className,
             )}
           >
             <SelectValue placeholder={placeholder} />
           </SelectTrigger>
-          <SelectContent position="popper">
+          <SelectContent
+            position="popper"
+            className="max-w-[calc(100vw-2rem)] w-[var(--radix-select-trigger-width)]"
+          >
             {options.map((option) => (
-              <SelectItem key={option.value} value={option.value}>
-                {option.label}
+              <SelectItem
+                key={option.value}
+                value={option.value}
+                className="whitespace-normal text-left h-auto py-2"
+              >
+                <span className="block break-words whitespace-normal">
+                  {option.label}
+                </span>
               </SelectItem>
             ))}
           </SelectContent>
@@ -47,5 +74,5 @@ const LabelSelect = React.forwardRef<HTMLButtonElement, LabelSelectProps>(
   },
 );
 
-LabelSelect.displayName = 'LabelSelect';
+LabelSelect.displayName = "LabelSelect";
 export default LabelSelect;
