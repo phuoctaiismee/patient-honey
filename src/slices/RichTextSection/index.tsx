@@ -66,9 +66,11 @@ const DentalImplantGuide: FC<DentalImplantGuideProps> = ({ slice }) => {
                 {children}
               </p>
             ),
-            list: ({ children }) => <ul className="space-y-2">{children}</ul>,
+            list: ({ children }) => (
+              <ul className="space-y-2 pl-6">{children}</ul>
+            ),
             listItem: ({ children }) => (
-              <li className="text-base list-disc list-inside leading-[150%] [&>strong]:font-bold font-light tracking-[0%] text-[#F1F1F1] lg:text-lg">
+              <li className="text-base list-disc list-inside leading-[150%] [&>strong]:font-bold font-light tracking-[0%] text-[#F1F1F1] lg:text-lg -indent-6">
                 {children}
               </li>
             ),
