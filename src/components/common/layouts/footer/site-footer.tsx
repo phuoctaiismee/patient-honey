@@ -69,13 +69,13 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
                   </Button>
                 </div>
                 <Separator className="lg:border-2 border-[#4A4754]" />
-                <div className="space-y-6">
+                <div className="space-y-6 bg">
                   {topFooterContacts.map((item) => (
                     <div
-                      className="grid grid-cols-1 lg:grid-cols-4 gap-2"
+                      className="grid grid-cols-1 lg:grid-cols-5 gap-2 xl:grid-cols-4 items-start"
                       key={item.label}
                     >
-                      <div className="flex items-center gap-6">
+                      <div className="flex items-center gap-6 lg:col-span-2 xl:col-span-1">
                         <Image
                           src={item.icon || ""}
                           alt={item.label || "icon"}
