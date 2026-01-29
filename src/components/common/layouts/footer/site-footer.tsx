@@ -1,5 +1,6 @@
 "use client";
 
+import { ellipse_blur } from "@/assets";
 import MapComponent from "@/components/shared/map";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -177,58 +178,10 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
             {/* right */}
             <div className="relative flex-1 space-y-15">
               {/* decoration */}
-              <svg
-                width="1265"
-                height="1265"
-                viewBox="0 0 1265 1265"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g filter="url(#filter0_f_923_1618)">
-                  <circle
-                    cx="632.5"
-                    cy="632.5"
-                    r="332.5"
-                    fill="url(#paint0_radial_923_1618)"
-                    fillOpacity="0.5"
-                  />
-                </g>
-                <defs>
-                  <filter
-                    id="filter0_f_923_1618"
-                    x="0"
-                    y="0"
-                    width="1265"
-                    height="1265"
-                    filterUnits="userSpaceOnUse"
-                    colorInterpolationFilters="sRGB"
-                  >
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                    <feBlend
-                      mode="normal"
-                      in="SourceGraphic"
-                      in2="BackgroundImageFix"
-                      result="shape"
-                    />
-                    <feGaussianBlur
-                      stdDeviation="150"
-                      result="effect1_foregroundBlur_923_1618"
-                    />
-                  </filter>
-                  <radialGradient
-                    id="paint0_radial_923_1618"
-                    cx="0"
-                    cy="0"
-                    r="1"
-                    gradientUnits="userSpaceOnUse"
-                    gradientTransform="translate(632.5 632.5) rotate(90) scale(332.5)"
-                  >
-                    <stop stopColor="#4D4D4D" />
-                    <stop offset="1" stopColor="white" stopOpacity="0" />
-                  </radialGradient>
-                </defs>
-              </svg>
+
+              <div className="absolute size-[1000px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
+                <Image src={ellipse_blur} alt="decoration" />
+              </div>
 
               <div className="space-y-6">
                 <h3 className="font-urbanist text-[26px] leading-[100%] font-bold tracking-[5%]">
