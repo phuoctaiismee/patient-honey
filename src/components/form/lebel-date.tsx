@@ -1,10 +1,14 @@
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { cn } from '@/lib/utils';
-import { format } from 'date-fns';
-import { CalendarIcon } from 'lucide-react';
-import React from 'react';
-import { Button } from '../ui/button';
-import { Calendar } from '../ui/calendar';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { format } from "date-fns";
+import { CalendarIcon } from "lucide-react";
+import React from "react";
+import { Button } from "../ui/button";
+import { Calendar } from "../ui/calendar";
 
 // Custom Input with floating label
 interface LabelDateProps {
@@ -18,7 +22,9 @@ interface LabelDateProps {
 const LabelDate = React.forwardRef<HTMLInputElement, LabelDateProps>(
   ({ label, error, value, onValueChange, className, ...props }, ref) => {
     const [open, setOpen] = React.useState(false);
-    const [date, setDate] = React.useState<Date | undefined>(value ? new Date(value) : undefined);
+    const [date, setDate] = React.useState<Date | undefined>(
+      value ? new Date(value) : undefined,
+    );
 
     return (
       <div className="relative w-full">
@@ -31,13 +37,13 @@ const LabelDate = React.forwardRef<HTMLInputElement, LabelDateProps>(
               variant="outline"
               id="date-picker-optional"
               className={cn(
-                'h-14 w-full justify-between rounded-[4px] border-[#9B9B9B]! bg-[#303030]! font-normal',
-                { 'text-muted-foreground': !date },
-                { 'border-destructive!': error },
+                "h-14 w-full justify-between rounded-[4px] border-[#9B9B9B]! bg-[#303030]! font-normal",
+                { "text-muted-foreground": !date },
+                { "border-destructive!": error },
                 className,
               )}
             >
-              {date ? format(date, 'PPP') : 'mm/dd/yyyy'}
+              {date ? format(date, "PPP") : "mm/dd/yyyy"}
               <CalendarIcon />
             </Button>
           </PopoverTrigger>
@@ -49,7 +55,7 @@ const LabelDate = React.forwardRef<HTMLInputElement, LabelDateProps>(
               defaultMonth={date}
               onSelect={(date) => {
                 setDate(date);
-                onValueChange(date ? date.toISOString() : '');
+                onValueChange(date ? date.toISOString() : "");
                 setOpen(false);
               }}
             />
@@ -61,6 +67,6 @@ const LabelDate = React.forwardRef<HTMLInputElement, LabelDateProps>(
   },
 );
 
-LabelDate.displayName = 'LabelDate';
+LabelDate.displayName = "LabelDate";
 
 export default LabelDate;
