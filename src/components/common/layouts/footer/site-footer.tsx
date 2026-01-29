@@ -44,7 +44,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
 
   return (
     <div className="overflow-hidden">
-      <footer className="flex flex-col gap-25 container py-20">
+      <footer className="flex flex-col gap-25 container py-20 ">
         {!shouldHideFooterHeader && (
           <>
             <div className="w-full mx-auto flex flex-col gap-[60] lg:flex-row">
@@ -141,7 +141,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
             <Separator className="lg:border-2 border-[#4A4754]" />
           </>
         )}
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-20 w-full">
           <div className="flex flex-col items-center gap-15 lg:flex-row">
             {/* left */}
             <div className="flex flex-col items-center justify-center gap-8">
@@ -176,7 +176,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
               )}
             </div>
             {/* right */}
-            <div className="relative flex-1 space-y-15">
+            <div className="relative flex-1 space-y-15 w-full">
               {/* decoration */}
 
               <div className="absolute size-[1000px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
@@ -187,7 +187,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
                 <h3 className="font-urbanist text-[26px] leading-[100%] font-bold tracking-[5%]">
                   {contactLabel}
                 </h3>
-                <div className="flex flex-1 flex-col items-start gap-4.5 md:flex-row md:justify-between">
+                <div className="flex flex-1 flex-col items-start gap-4.5 lg:flex-row lg:justify-between">
                   {contacts.map((item, index) => (
                     <div className="space-y-3" key={index}>
                       <div className="text-xl leading-[100%] font-normal tracking-[5%]">
@@ -204,7 +204,7 @@ const SiteFooter = ({ data }: SiteFooterProps) => {
                 <h3 className="font-urbanist text-[26px] leading-[100%] font-bold tracking-[5%]">
                   {navigationLabel}
                 </h3>
-                <div className="flex flex-col items-start gap-4.5 lg:flex-row md:justify-between">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4.5 xl:grid-cols-4">
                   <div className="flex flex-col gap-2">
                     {navigations.slice(0, 8).map((link) => {
                       const isActive = pathname === link.href;

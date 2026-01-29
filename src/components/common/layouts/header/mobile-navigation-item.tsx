@@ -72,7 +72,7 @@ export const MobileNavigationItem = ({
             key={sub.text}
             href={sub.href || "#"}
             className={cn(
-              "block px-4 py-2.5 text-center text-base leading-[160%] font-normal text-white hover:bg-accent rounded-md",
+              "block px-4 py-2.5 text-center text-base leading-[160%] font-normal text-white hover:bg-accent/10 rounded-md",
               {
                 "text-primary underline": isActiveRoute(pathname, sub.href),
               },

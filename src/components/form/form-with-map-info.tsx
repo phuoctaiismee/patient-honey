@@ -98,7 +98,7 @@ const FormWithMapInfo = ({
           <MapComponent
             className="h-[296px] w-full overflow-hidden lg:rounded-tr-[24px]"
             center={[office_location.longitude, office_location.latitude]}
-            zoom={8}
+            zoom={18}
           />
           <motion.div
             initial="hidden"

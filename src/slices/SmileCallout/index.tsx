@@ -62,10 +62,10 @@ const SmileCallout: FC<SmileCalloutProps> = ({ slice }) => {
                   </p>
                 ),
                 list: ({ children }) => (
-                  <ul className="space-y-2">{children}</ul>
+                  <ul className="space-y-2 pl-6">{children}</ul>
                 ),
                 listItem: ({ children }) => (
-                  <li className="text-base list-disc list-inside leading-[36px] [&>strong]:font-bold font-light tracking-[0%] text-[#F1F1F1] lg:text-lg">
+                  <li className="text-base list-disc list-inside leading-[36px] [&>strong]:font-bold font-light tracking-[0%] text-[#F1F1F1] -indent-6 lg:text-lg">
                     {children}
                   </li>
                 ),
