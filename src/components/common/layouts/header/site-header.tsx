@@ -86,7 +86,14 @@ export const SiteHeader = ({ data }: SiteHeaderProps) => {
       {/* Header - Shared for both Desktop and Mobile */}
       <header className="sticky top-0 z-100 flex h-18 items-center justify-between px-6 lg:h-25 bg-background">
         <Link href="/">
-          {logo && <PrismicNextImage field={logo} className="h-12 w-24" />}
+          {logo && (
+            <PrismicNextImage
+              field={logo}
+              className="h-12 w-24"
+              width={400}
+              height={240}
+            />
+          )}
         </Link>
 
         {/* Desktop Navigation */}

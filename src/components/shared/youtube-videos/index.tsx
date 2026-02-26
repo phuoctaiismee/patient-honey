@@ -1,12 +1,12 @@
 "use client";
 
 import {
-    Carousel,
-    CarouselApi,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
@@ -100,8 +100,8 @@ export default function YoutubeVideosSection({
             ))}
           </CarouselContent>
 
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="left-0" />
+          <CarouselNext className="right-0" />
         </Carousel>
       </div>
     );
@@ -136,7 +136,7 @@ export default function YoutubeVideosSection({
                     <iframe
                       src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
                       className="aspect-video w-full"
-                    //   allow="autoplay; encrypted-media"
+                      //   allow="autoplay; encrypted-media"
                       allowFullScreen
                     />
                   ) : (
